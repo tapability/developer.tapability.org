@@ -61,7 +61,7 @@ direction
 <%= headers 200 %>
 <%= json :job_full %>
 
-## Create an job
+## Create a job
 
 _This endpoint is only available to employers_
 
@@ -91,7 +91,7 @@ coordinates
 <%= headers 201, :Location => "https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355" %>
 <%= json :job_authenticated %>
 
-## Update an job
+## Update a job
 
 _This endpoint is only available to employers_
 
@@ -134,7 +134,7 @@ Expired the provided job. This marks the job as no longer available for candidat
 <%= headers 200 %>
 <%= json :job_authenticated %>
 
-## Delete an job
+## Delete a job
 
 _This endpoint is only available to employers_
 
