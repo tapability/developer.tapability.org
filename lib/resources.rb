@@ -127,9 +127,9 @@ module Tapability
       "coordinates"  => COORDINATES
     }
 
-    JOB_FULL = EVENT.merge({})
+    JOB_FULL = JOB.merge({})
 
-    JOB_AUTHENTICATED = EVENT_FULL.merge({})
+    JOB_AUTHENTICATED = JOB_FULL.merge({})
 
   end
 end
