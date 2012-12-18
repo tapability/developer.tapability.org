@@ -15,6 +15,11 @@ Get the currently logged in candidate's resume
 
     GET /me/resume
 
+### Response
+
+<%= headers 200 %>
+<%= json :resume_authenticated %>
+
 ## Edit my resume
 
 _This endpoint is only available to candidates_
