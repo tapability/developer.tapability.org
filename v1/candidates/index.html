@@ -30,6 +30,31 @@
   <div id="wrapper">
     <div class="content">
       <h1 id="candidates-api">Candidates API</h1>
+
+<ul id="markdown-toc">
+<li><a href="#get-my-profile">Get my profile</a></li>
+</ul><h2 id="get-my-profile">Get my profile</h2>
+
+<p><em>This endpoint is only available to candidates</em></p>
+
+<p>Get the currently logged in candidate’s info</p>
+
+<p>GET /me</p>
+
+<h3 id="response">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"eaf3022f-330e-46db-8665-01e0969ff2f7"</span><span class="p">,</span>
+  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7"</span><span class="p">,</span>
+  <span class="s2">"html_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Dwight Schrute"</span><span class="p">,</span>
+  <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight@tapability.org"</span>
+<span class="p">}</span></code></pre>
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">
@@ -40,9 +65,6 @@
         </li>
         <li class="js-topic">
           <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v1/keys">Authentication/Keys</a></h3>
-        </li>
-        <li class="js-topic">
-          <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v1/agencies/">Agencies</a></h3>
         </li>
         <li class="js-topic">
           <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v1/candidates/">Candidates</a></h3>
