@@ -35,6 +35,9 @@
 <li><a href="#get-my-profile">Get my profile</a></li>
   <li><a href="#list-candidates">List candidates</a></li>
   <li><a href="#get-a-single-candidate">Get a single candidate</a></li>
+  <li><a href="#edit-a-candidate">Edit a candidate</a></li>
+  <li><a href="#archive-a-candidate">Archive a candidate</a></li>
+  <li><a href="#delete-a-candidate">Delete a candidate</a></li>
 </ul><h2 id="get-my-profile">Get my profile</h2>
 
 <p><em>This endpoint is only available to candidates</em></p>
@@ -118,6 +121,69 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Dwight Schrute"</span><span class="p">,</span>
   <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight@tapability.org"</span>
 <span class="p">}</span></code></pre>
+
+<h2 id="edit-a-candidate">Edit a candidate</h2>
+
+<p><em>This endpoint is only available to counselors</em></p>
+
+<p>Edit the profile attributes of a given candidate.</p>
+
+<pre><code>PATCH /candidates/:candidate_id
+</code></pre>
+
+<h3 id="response-3">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"eaf3022f-330e-46db-8665-01e0969ff2f7"</span><span class="p">,</span>
+  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7"</span><span class="p">,</span>
+  <span class="s2">"html_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Dwight Schrute"</span><span class="p">,</span>
+  <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight@tapability.org"</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="archive-a-candidate">Archive a candidate</h2>
+
+<p><em>This endpoint is only available to counselors</em></p>
+
+<p>Archive the provided candidate so they are not listed with current cases.</p>
+
+<pre><code>POST /candidates/:candidate_id/archive
+</code></pre>
+
+<h3 id="response-4">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"eaf3022f-330e-46db-8665-01e0969ff2f7"</span><span class="p">,</span>
+  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7"</span><span class="p">,</span>
+  <span class="s2">"html_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Dwight Schrute"</span><span class="p">,</span>
+  <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight@tapability.org"</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="delete-a-candidate">Delete a candidate</h2>
+
+<p><em>This endpoint is only available to counselors</em></p>
+
+<p>Delete the provided candidate</p>
+
+<pre><code>DELETE /candidates/:candidate_id
+</code></pre>
+
+<h3 id="response-5">Response</h3>
+
+<pre class="headers no-response"><code>Status: 204 No Content
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">
