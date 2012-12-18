@@ -53,3 +53,41 @@ Get a single candidate with their ID.
 
 <%= headers 200 %>
 <%= json :candidate_full %>
+
+## Edit a candidate
+
+_This endpoint is only available to counselors_
+
+Edit the profile attributes of a given candidate.
+
+    PATCH /candidates/:candidate_id
+
+### Response
+
+<%= headers 200 %>
+<%= json :candidate_full %>
+
+## Archive a candidate
+
+_This endpoint is only available to counselors_
+
+Archive the provided candidate so they are not listed with current cases.
+
+    POST /candidates/:candidate_id/archive
+
+### Response
+
+<%= headers 200 %>
+<%= json :candidate_full %>
+
+## Delete a candidate
+
+_This endpoint is only available to counselors_
+
+Delete the provided candidate
+
+    DELETE /candidates/:candidate_id
+
+### Response
+
+<%= headers 204 %>
