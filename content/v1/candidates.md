@@ -13,7 +13,7 @@ _This endpoint is only available to candidates_
 
 Get the currently logged in candidate's info
 
-  GET /me
+    GET /me
 
 ### Response
 
