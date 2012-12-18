@@ -24,7 +24,7 @@ List all jobs across all users.
 ### Parameters
 
 sort
-: `created`, `updated`, `name`, `date`, default: `date`.
+: `created_at`, `updated_at`, `title`, default: `created_at`.
 
 direction
 : `asc` or `desc`, default: `desc`
@@ -50,7 +50,7 @@ direction
 ### Parameters
 
 sort
-: `created`, `updated`, `name`, `date`, default: `date`.
+: `created_at`, `updated_at`, `title`, default: `created_at`.
 
 direction
 : `asc` or `desc`, default: `desc`
@@ -140,7 +140,7 @@ Expired the provided job. This marks the job as no longer available for candidat
 ### Response
 
 <%= headers 200 %>
-<%= json :job_authenticated %>
+<%= json :job_authenticated_expired %>
 
 ## Delete a job
 

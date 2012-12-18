@@ -139,6 +139,11 @@ module Tapability
 
     JOB_AUTHENTICATED = JOB_FULL.merge({})
 
+    JOB_AUTHENTICATED_EXPIRED = JOB_AUTHENTICATED.merge({
+      "expired"      => true,
+      "expires_at"   => FUTURE_AT
+    })
+
     RESUME = {
       "objective"    => "Get a job in Scranton, PA",
       "updated_at"   => CREATED_AT
