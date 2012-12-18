@@ -78,7 +78,7 @@ Archive the provided candidate so they are not listed with current cases.
 ### Response
 
 <%= headers 200 %>
-<%= json :candidate_full %>
+<%= json :candidate_full_archived %>
 
 ## Delete a candidate
 

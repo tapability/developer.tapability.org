@@ -80,6 +80,7 @@ module Tapability
     end
 
     CREATED_AT = "2012-12-09T17:58:26Z"
+    FUTURE_AT = "2012-12-18T21:41:30Z"
 
     KEY = {
       "description" => "Dwight's iPhone",
@@ -100,13 +101,20 @@ module Tapability
     CANDIDATE = {
       "id"           => "eaf3022f-330e-46db-8665-01e0969ff2f7",
       "api_url"      => "https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7",
-      "html_url"     => "https://tapability.org/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7",
-      "created_at"   => CREATED_AT
+      "archived"     => false,
+      "created_at"   => CREATED_AT,
+      "updated_at"   => CREATED_AT
     }
 
     CANDIDATE_FULL = CANDIDATE.merge({
       "name"         => "Dwight Schrute",
-      "email"        => "dwight@tapability.org"
+      "email"        => "dwight@tapability.org",
+      "archived_at"  => nil
+    })
+
+    CANDIDATE_FULL_ARCHIVED = CANDIDATE_FULL.merge({
+      "archived"     => true,
+      "archived_at"  => FUTURE_AT
     })
 
     CANDIDATE_AUTHENTICATED = CANDIDATE_FULL.merge({})
