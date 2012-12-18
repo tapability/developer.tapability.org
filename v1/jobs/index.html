@@ -69,9 +69,9 @@
 </dd>
 </dl><h2 id="list-employer-jobs">List employer jobs</h2>
 
-<p>List jobs owned by the specified user.</p>
+<p>List jobs owned by the specified employer.</p>
 
-<pre><code>GET /employers/:employer/jobs
+<pre><code>GET /employers/:employer_id/jobs
 </code></pre>
 
 <h3 id="parameters-1">Parameters</h3>
@@ -228,7 +228,7 @@ X-RateLimit-Remaining: 4999</code></pre>
 
 <p>Update the provided job.</p>
 
-<pre><code>PATCH /me/jobs/:job_id
+<pre><code>PATCH /jobs/:job_id
 </code></pre>
 
 <h3 id="input-1">Input</h3>
