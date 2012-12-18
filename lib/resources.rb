@@ -131,6 +131,15 @@ module Tapability
 
     JOB_AUTHENTICATED = JOB_FULL.merge({})
 
+    RESUME = {
+      "objective"    => "Get a job in Scranton, PA",
+      "updated_at"   => CREATED_AT
+    }
+
+    RESUME_FULL = RESUME.merge({})
+
+    RESUME_AUTHENTICATED = RESUME_FULL.merge({})
+
   end
 end
 

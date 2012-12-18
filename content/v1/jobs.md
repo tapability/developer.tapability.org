@@ -7,6 +7,14 @@ title: Jobs | Tapability API
 * TOC
 {:toc}
 
+## List owned jobs
+
+_This endpoint is only available to employers_
+
+List all jobs created by you.
+
+    GET /me/jobs
+
 ## List all jobs
 
 List all jobs across all users.
