@@ -31,9 +31,9 @@ direction
 
 ## List employer jobs
 
-List jobs owned by the specified user.
+List jobs owned by the specified employer.
 
-    GET /employers/:employer/jobs
+    GET /employers/:employer_id/jobs
 
 ### Parameters
 
@@ -105,7 +105,7 @@ _This endpoint is only available to employers_
 
 Update the provided job.
 
-    PATCH /me/jobs/:job_id
+    PATCH /jobs/:job_id
 
 ### Input
 
