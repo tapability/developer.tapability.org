@@ -34,6 +34,7 @@
 <ul id="markdown-toc">
 <li><a href="#get-my-resume">Get my resume</a></li>
   <li><a href="#edit-my-resume">Edit my resume</a></li>
+  <li><a href="#edit-a-candidates-resume">Edit a candidate’s resume</a></li>
 </ul><h2 id="get-my-resume">Get my resume</h2>
 
 <p><em>This endpoint is only available to candidates</em></p>
@@ -75,6 +76,37 @@ X-RateLimit-Remaining: 4999</code></pre>
 <span class="p">}</span></code></pre>
 
 <h3 id="response-1">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"objective"</span><span class="o">:</span> <span class="s2">"Get a job in Scranton, PA"</span><span class="p">,</span>
+  <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="edit-a-candidates-resume">Edit a candidate’s resume</h2>
+
+<p><em>This endpoint is only available to counselors</em></p>
+
+<p>Update the provided candidate’s resume.</p>
+
+<pre><code>PATCH /candidates/:candidate_id/resume
+</code></pre>
+
+<h3 id="input-1">Input</h3>
+
+<dl>
+<dt>objective</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"objective"</span><span class="o">:</span> <span class="s2">"Get a job in Scranton, PA"</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="response-2">Response</h3>
 
 <pre class="headers"><code>Status: 200 OK
 X-RateLimit-Limit: 5000
