@@ -126,7 +126,7 @@ module Tapability
       "first_name"  => "Jim",
       "last_name"   => "Halpert",
       "email"       => "jim@tapability.org",
-      "api_url"     => "https://tapability.org/api/v1/counselors/ac300f35-61a0-49e4-85c2-5b283d876b31"
+      "api_url"     => "https://tapability.org/api/v1/counselors/ac300f35-61a0-49e4-85c2-5b283d876b31",
       "created_at"  => CREATED_AT,
       "updated_at"  => CREATED_AT
     }
