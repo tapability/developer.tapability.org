@@ -30,6 +30,169 @@
   <div id="wrapper">
     <div class="content">
       <h1 id="counselors-api">Counselors API</h1>
+
+<ul id="markdown-toc">
+<li><a href="#get-my-profile">Get my profile</a></li>
+  <li><a href="#list-counselors">List counselors</a></li>
+  <li><a href="#get-a-single-counselor">Get a single counselor</a></li>
+  <li><a href="#create-a-new-counselor">Create a new counselor</a></li>
+  <li><a href="#edit-a-counselor">Edit a counselor</a></li>
+  <li><a href="#delete-a-counselor">Delete a counselor</a></li>
+</ul><h2 id="get-my-profile">Get my profile</h2>
+
+<p><em>This endpoint is only available to counselors</em></p>
+
+<p>Get the currently logged in counselor’s info.</p>
+
+<pre><code>GET /me
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"ac300f35-61a0-49e4-85c2-5b283d876b31"</span><span class="p">,</span>
+  <span class="s2">"first_name"</span><span class="o">:</span> <span class="s2">"Jim"</span><span class="p">,</span>
+  <span class="s2">"last_name"</span><span class="o">:</span> <span class="s2">"Halpert"</span><span class="p">,</span>
+  <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"jim@tapability.org"</span><span class="p">,</span>
+  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/counselors/ac300f35-61a0-49e4-85c2-5b283d876b31"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="list-counselors">List counselors</h2>
+
+<p><em>This endpoint is only available to counselors</em></p>
+
+<p>List all counselors visible to the currently logged-in counselor.</p>
+
+<pre><code>GET /counselors
+</code></pre>
+
+<h3 id="parameters">Parameters</h3>
+
+<dl>
+<dt>sort</dt>
+  <dd>
+<code>created_at</code>, <code>updated_at</code>, <code>first_name</code>, <code>last_name</code>, default: <code>last_name</code>.</dd>
+  <dt>direction</dt>
+  <dd>
+<code>asc</code> or <code>desc</code>, default: <code>asc</code>
+</dd>
+</dl><h3 id="response-1">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+Link: &lt;https://tapability.org/api/v1/resource?page=2&gt;; rel="next",
+      &lt;https://tapability.org/api/v1/resource?page=5&gt;; rel="last"
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"ac300f35-61a0-49e4-85c2-5b283d876b31"</span><span class="p">,</span>
+    <span class="s2">"first_name"</span><span class="o">:</span> <span class="s2">"Jim"</span><span class="p">,</span>
+    <span class="s2">"last_name"</span><span class="o">:</span> <span class="s2">"Halpert"</span><span class="p">,</span>
+    <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"jim@tapability.org"</span><span class="p">,</span>
+    <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/counselors/ac300f35-61a0-49e4-85c2-5b283d876b31"</span><span class="p">,</span>
+    <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+    <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre>
+
+<h2 id="get-a-single-counselor">Get a single counselor</h2>
+
+<p><em>This endpoint is only available to counselors</em></p>
+
+<p>Get a single counselor with their ID.</p>
+
+<pre><code>GET /counselors/:counselor_id
+</code></pre>
+
+<h3 id="response-2">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"ac300f35-61a0-49e4-85c2-5b283d876b31"</span><span class="p">,</span>
+  <span class="s2">"first_name"</span><span class="o">:</span> <span class="s2">"Jim"</span><span class="p">,</span>
+  <span class="s2">"last_name"</span><span class="o">:</span> <span class="s2">"Halpert"</span><span class="p">,</span>
+  <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"jim@tapability.org"</span><span class="p">,</span>
+  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/counselors/ac300f35-61a0-49e4-85c2-5b283d876b31"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="create-a-new-counselor">Create a new counselor</h2>
+
+<p><em>This endpoint is only available to counselors</em></p>
+
+<p>Create a new counselor as a “child” counselor of the currently
+logged-in counselor.</p>
+
+<pre><code>POST /counselors
+</code></pre>
+
+<h3 id="response-3">Response</h3>
+
+<pre class="headers"><code>Status: 201 Created
+location: https://tapability.org/api/v1/counselors/ac300f35-61a0-49e4-85c2-5b283d876b31
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"ac300f35-61a0-49e4-85c2-5b283d876b31"</span><span class="p">,</span>
+  <span class="s2">"first_name"</span><span class="o">:</span> <span class="s2">"Jim"</span><span class="p">,</span>
+  <span class="s2">"last_name"</span><span class="o">:</span> <span class="s2">"Halpert"</span><span class="p">,</span>
+  <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"jim@tapability.org"</span><span class="p">,</span>
+  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/counselors/ac300f35-61a0-49e4-85c2-5b283d876b31"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="edit-a-counselor">Edit a counselor</h2>
+
+<p><em>This endpoint is only available to counselors</em></p>
+
+<p>Edit the profile attributes of a given counselor.</p>
+
+<pre><code>PATCH /counselors/:counselor_id
+</code></pre>
+
+<h3 id="response-4">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"ac300f35-61a0-49e4-85c2-5b283d876b31"</span><span class="p">,</span>
+  <span class="s2">"first_name"</span><span class="o">:</span> <span class="s2">"Jim"</span><span class="p">,</span>
+  <span class="s2">"last_name"</span><span class="o">:</span> <span class="s2">"Halpert"</span><span class="p">,</span>
+  <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"jim@tapability.org"</span><span class="p">,</span>
+  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/counselors/ac300f35-61a0-49e4-85c2-5b283d876b31"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="delete-a-counselor">Delete a counselor</h2>
+
+<p><em>This endpoint is only available to counselors</em></p>
+
+<p>Delete the provided counselor.</p>
+
+<pre><code>DELETE /counselors/:counselor_id
+</code></pre>
+
+<h3 id="response-5">Response</h3>
+
+<pre class="headers no-response"><code>Status: 204 No Content
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">
