@@ -81,6 +81,7 @@ module Tapability
 
     CREATED_AT = "2012-12-09T17:58:26Z"
     FUTURE_AT = "2012-12-18T21:41:30Z"
+    COORDINATES = [32.7993, -117.16]
 
     KEY = {
       "description" => "Dwight's iPhone",
@@ -107,7 +108,8 @@ module Tapability
     }
 
     CANDIDATE_FULL = CANDIDATE.merge({
-      "name"         => "Dwight Schrute",
+      "first_name"   => "Dwight",
+      "last_name"    => "Schrute",
       "email"        => "dwight@tapability.org",
       "archived_at"  => nil
     })
@@ -119,11 +121,23 @@ module Tapability
 
     CANDIDATE_AUTHENTICATED = CANDIDATE_FULL.merge({})
 
-    COORDINATES = [32.7993, -117.16]
+    COUNSELOR = {
+      "id"          => "ac300f35-61a0-49e4-85c2-5b283d876b31",
+      "first_name"  => "Jim",
+      "last_name"   => "Halpert",
+      "email"       => "jim@tapability.org",
+      "api_url"     => "https://tapability.org/api/v1/counselors/ac300f35-61a0-49e4-85c2-5b283d876b31"
+      "created_at"  => CREATED_AT,
+      "updated_at"  => CREATED_AT
+    }
+
+    COUNSELOR_FULL = COUNSELOR.merge({})
+
+    COUNSELOR_AUTHENTICATED = COUNSELOR_FULL.merge({})
 
     JOB = {
       "id"           => "a3338736-ffcd-472e-9b82-b7ca38eaa355",
-      "name"         => "Assistant Regional Manager",
+      "title"        => "Assistant Regional Manager",
       "description"  => "",
       "api_url"      => "https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355",
       "html_url"     => "https://tapability.org/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355",
