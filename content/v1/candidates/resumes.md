@@ -41,3 +41,25 @@ objective
 
 <%= headers 200 %>
 <%= json :resume_authenticated %>
+
+## Edit a candidate's resume
+
+_This endpoint is only available to counselors_
+
+Update the provided candidate's resume.
+
+    PATCH /candidates/:candidate_id/resume
+
+### Input
+
+objective
+: _Required_ **string**
+
+<%= json \
+    :objective   => "Get a job in Scranton, PA"
+%>
+
+### Response
+
+<%= headers 200 %>
+<%= json :resume_full %>
