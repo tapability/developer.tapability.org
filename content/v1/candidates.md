@@ -20,6 +20,19 @@ Get the currently logged in candidate's info
 <%= headers 200 %>
 <%= json :candidate_authenticated %>
 
+## Get information about my counselor
+
+_This endpoint is only available to candidates_
+
+Get counselor information for the currently logged-in candidate.
+
+    GET /me/counselor
+
+### Response
+
+<%= headers 200 %>
+<%= json :counselor_full %>
+
 ## List candidates
 
 _This endpoint is only available to counselors_
