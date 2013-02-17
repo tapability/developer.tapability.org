@@ -89,9 +89,16 @@ module Tapability
       "created_at"  => CREATED_AT
     }
 
+    LOCATION = {
+      "city"        => "San Diego",
+      "state"       => "California",
+      "coordinates" => COORDINATES
+    }
+
     EMPLOYER = {
       "id"          => "38075a53-a470-4654-a4e6-4d67c2207b35",
       "name"        => "Dunder Miflin",
+      "api_url"     => "https://tapability.org/api/v1/employers/38075a53-a470-4654-a4e6-4d67c2207b35",
       "website_url" => "http://www.dundermiflin.com"
     }
 
@@ -126,6 +133,7 @@ module Tapability
       "first_name"  => "Jim",
       "last_name"   => "Halpert",
       "email"       => "jim@tapability.org",
+      "title"       => "Vocational Rehab Counselor",
       "api_url"     => "https://tapability.org/api/v1/counselors/ac300f35-61a0-49e4-85c2-5b283d876b31",
       "created_at"  => CREATED_AT,
       "updated_at"  => CREATED_AT
@@ -158,12 +166,96 @@ module Tapability
       "expires_at"   => FUTURE_AT
     })
 
-    RESUME = {
-      "objective"    => "Get a job in Scranton, PA",
-      "updated_at"   => CREATED_AT
+    RESUME_WORK_EXPERIENCE = {
+      "id"            => "8d0ec106-2ea1-4905-bcc6-86317085607b",
+      "title"         => "Assistant to the Regional Manager",
+      "employer_name" => "Dunder Miflin",
+      "city"          => "Scranton",
+      "state"         => "Pennsylvania",
+      "start_date"    => "2010-01-01",
+      "end_date"      => "2012-12-01",
+      "duties"        => "Helping out the world's greatest boss."
     }
 
-    RESUME_FULL = RESUME.merge({})
+    RESUME_EDUCATION = {
+      "id"            => "4f87f608-7872-4c37-a845-cbe08d880489",
+      "institution"   => "University of California at Santa Barbara",
+      "city"          => "Santa Barbara",
+      "state"         => "California",
+      "degree"        => "Bachelor of Science",
+      "concentration" => "Computer Science",
+      "start_date"    => "2002-09-01",
+      "end_date"      => "2006-06-01",
+      "graduated"     => true
+    }
+
+    RESUME_AWARD = {
+      "id"            => "2894c358-f2d0-4a3f-952f-5afdb8dd81aa",
+      "description"   => "Emmy - Best Actor",
+      "source"        => "Academy of Television Arts and Sciences",
+      "date"          => "2012-09-23"
+    }
+
+    RESUME_CERTIFICATION = {
+      "id"            => "aa0438f0-e2fa-4bbc-b932-2be87186c751",
+      "description"   => "Cisco Certified Network Administrator (CCNA)",
+      "source"        => "Cisco",
+      "start_date"    => "2011-01-01",
+      "end_date"      => "2013-12-31"
+    }
+
+    RESUME_MEMBERSHIP = {
+      "id"            => "698c9bfb-29d9-4df1-9425-e93c948965d1",
+      "description"   => "American Society for Training and Development (ASTD)",
+      "source"        => "ATSD",
+      "start_date"    => "2011-01-01",
+      "end_date"      => "2013-12-31"
+    }
+
+    RESUME_PUBLICATION = {
+      "id"            => "33dbc578-d2cf-4892-bece-f6e7b5c2c477",
+      "description"   => "Office Relationships at Dunder Miflin",
+      "source"        => "The New York Times",
+      "date"          => "2013-01-01"
+    }
+
+    RESUME_TRAINING = {
+      "id"            => "7c44e640-d3fc-4b07-bc38-3e1c4bdf9d0e",
+      "description"   => "Microsoft Office Specialist",
+      "source"        => "Microsoft",
+      "date"          => "2013-01-01"
+    }
+
+    RESUME_LOCATION = {
+      "id"            => "8a58f89e-d8fe-4477-aeaf-fe37f7c86e8c",
+      "distance"      => 10
+    }.merge(LOCATION)
+
+    RESUME = {
+      "street1"        => "1234 Penny Lane",
+      "street2"        => nil,
+      "city"           => "Scranton",
+      "state"          => "Pennsylvania",
+      "zip"            => "18501",
+      "coordinates"    => COORDINATES,
+      "phone"          => "8585551212",
+      "objective"      => "Get a job in Scranton, PA",
+      "qualifications" => "* Stapling\n* Paperclipping\n",
+      "published"      => false,
+      "published_at"   => nil,
+      "updated_at"     => CREATED_AT
+    }
+
+    RESUME_FULL = RESUME.merge({
+      "locations"        => [RESUME_LOCATION],
+      "work_experiences" => [RESUME_WORK_EXPERIENCE],
+      "educations"       => [RESUME_EDUCATION],
+      "awards"           => [RESUME_AWARD],
+      "certifications"   => [RESUME_CERTIFICATION],
+      "memberships"      => [RESUME_MEMBERSHIP],
+      "publications"     => [RESUME_PUBLICATION],
+      "trainings"        => [RESUME_TRAINING]
+    })
 
     RESUME_AUTHENTICATED = RESUME_FULL.merge({})
 
