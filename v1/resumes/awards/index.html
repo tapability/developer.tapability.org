@@ -33,6 +33,10 @@
 
 <ul id="markdown-toc">
 <li><a href="#list-awards-on-a-resume">List awards on a resume</a></li>
+  <li><a href="#get-a-single-award">Get a single award</a></li>
+  <li><a href="#create-an-award">Create an award</a></li>
+  <li><a href="#update-an-award">Update an award</a></li>
+  <li><a href="#delete-an-award">Delete an award</a></li>
 </ul><p><em>These endpoints are only available to counselors and candidates, candidates can only view/edit items in their own resume</em></p>
 
 <h2 id="list-awards-on-a-resume">List awards on a resume</h2>
@@ -58,6 +62,150 @@ X-RateLimit-Remaining: 4999</code></pre>
     <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
   <span class="p">}</span>
 <span class="p">]</span></code></pre>
+
+<h2 id="get-a-single-award">Get a single award</h2>
+
+<pre><code>GET /candidates/:candidate_id/resume/awards/:award_id
+</code></pre>
+
+<h3 id="response-1">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"2894c358-f2d0-4a3f-952f-5afdb8dd81aa"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
+  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="create-an-award">Create an award</h2>
+
+<p>Create a new award .</p>
+
+<pre><code>POST /candidates/:candidate_id/resume/awards
+</code></pre>
+
+<h3 id="input">Input</h3>
+
+<dl>
+<dt>description</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>source</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>date</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>
+</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
+  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="response-2">Response</h3>
+
+<pre class="headers"><code>Status: 201 Created
+Location: https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/awards/2894c358-f2d0-4a3f-952f-5afdb8dd81aa
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
+  <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
+  <span class="s2">"html_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"expires_at"</span><span class="o">:</span> <span class="s2">"2013-02-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"expired"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"employer"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"38075a53-a470-4654-a4e6-4d67c2207b35"</span><span class="p">,</span>
+    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Dunder Miflin"</span><span class="p">,</span>
+    <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/employers/38075a53-a470-4654-a4e6-4d67c2207b35"</span><span class="p">,</span>
+    <span class="s2">"website_url"</span><span class="o">:</span> <span class="s2">"http://www.dundermiflin.com"</span>
+  <span class="p">},</span>
+  <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="mf">32.7993</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">117.16</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="update-an-award">Update an award</h2>
+
+<p>Update the provided job.</p>
+
+<pre><code>PATCH /candidates/:candidate_id/resume/awards/:award_id
+</code></pre>
+
+<h3 id="input-1">Input</h3>
+
+<dl>
+<dt>description</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>source</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>date</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>
+</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
+  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="response-3">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
+  <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
+  <span class="s2">"html_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"expires_at"</span><span class="o">:</span> <span class="s2">"2013-02-09T17:58:26Z"</span><span class="p">,</span>
+  <span class="s2">"expired"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"employer"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"38075a53-a470-4654-a4e6-4d67c2207b35"</span><span class="p">,</span>
+    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Dunder Miflin"</span><span class="p">,</span>
+    <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/employers/38075a53-a470-4654-a4e6-4d67c2207b35"</span><span class="p">,</span>
+    <span class="s2">"website_url"</span><span class="o">:</span> <span class="s2">"http://www.dundermiflin.com"</span>
+  <span class="p">},</span>
+  <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="mf">32.7993</span><span class="p">,</span>
+    <span class="o">-</span><span class="mf">117.16</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="delete-an-award">Delete an award</h2>
+
+<p>Delete the provided award.</p>
+
+<pre><code>DELETE /candidates/:candidate_id/resume/awards/:award_id
+</code></pre>
+
+<h3 id="response-4">Response</h3>
+
+<pre class="headers no-response"><code>Status: 204 No Content
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">
