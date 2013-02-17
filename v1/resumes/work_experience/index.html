@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Language" content="en-us" />
   <meta http-equiv="imagetoolbar" content="false" />
   <meta name="MSSmartTagsPreventParsing" content="true" />
-  <title>Work Experience | Tapability API</title>
+  <title>Work Experiences | Tapability API</title>
   <link href="/css/reset.css" rel="stylesheet" type="text/css" />
   <link href="/css/960.css" rel="stylesheet" type="text/css" />
   <link href="/css/uv_active4d.css" rel="stylesheet" type="text/css" />
@@ -29,15 +29,19 @@
 
   <div id="wrapper">
     <div class="content">
-      <h1 id="work-experience-api">Work Experience API</h1>
+      <h1 id="work-experiences-api">Work Experiences API</h1>
 
 <ul id="markdown-toc">
-<li><a href="#list-work-experience-on-a-resume">List work experience on a resume</a></li>
+<li><a href="#list-work-experiences-on-a-resume">List work experiences on a resume</a></li>
+  <li><a href="#get-a-single-work-experience">Get a single work experience</a></li>
+  <li><a href="#create-an-work-experience">Create an work experience</a></li>
+  <li><a href="#update-an-work-experience">Update an work experience</a></li>
+  <li><a href="#delete-an-work-experience">Delete an work experience</a></li>
 </ul><p><em>These endpoints are only available to counselors and candidates, candidates can only view/edit items in their own resume</em></p>
 
-<h2 id="list-work-experience-on-a-resume">List work experience on a resume</h2>
+<h2 id="list-work-experiences-on-a-resume">List work experiences on a resume</h2>
 
-<p>Get a candidate’s work experience listed on their resume</p>
+<p>Get a candidate’s work experiences listed on their resume</p>
 
 <pre><code>GET /candidates/:candidate_id/resume/work_experiences
 </code></pre>
@@ -62,6 +66,132 @@ X-RateLimit-Remaining: 4999</code></pre>
     <span class="s2">"duties"</span><span class="o">:</span> <span class="s2">"Helping out the world's greatest boss."</span>
   <span class="p">}</span>
 <span class="p">]</span></code></pre>
+
+<h2 id="get-a-single-work-experience">Get a single work experience</h2>
+
+<pre><code>GET /candidates/:candidate_id/resume/work_experiences/:work_experience_id
+</code></pre>
+
+<h3 id="response-1">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"8d0ec106-2ea1-4905-bcc6-86317085607b"</span><span class="p">,</span>
+  <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant to the Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"employer_name"</span><span class="o">:</span> <span class="s2">"Dunder Miflin"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Scranton"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Pennsylvania"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2010-01-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2012-12-01"</span><span class="p">,</span>
+  <span class="s2">"duties"</span><span class="o">:</span> <span class="s2">"Helping out the world's greatest boss."</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="create-an-work-experience">Create an work experience</h2>
+
+<p>Create a new work experience.</p>
+
+<pre><code>POST /candidates/:candidate_id/resume/work_experiences
+</code></pre>
+
+<h3 id="input">Input</h3>
+
+<dl>
+<dt>description</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>source</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>date</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>
+</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
+  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="response-2">Response</h3>
+
+<pre class="headers"><code>Status: 201 Created
+Location: https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/work_experiences/2894c358-f2d0-4a3f-952f-5afdb8dd81aa
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"8d0ec106-2ea1-4905-bcc6-86317085607b"</span><span class="p">,</span>
+  <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant to the Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"employer_name"</span><span class="o">:</span> <span class="s2">"Dunder Miflin"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Scranton"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Pennsylvania"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2010-01-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2012-12-01"</span><span class="p">,</span>
+  <span class="s2">"duties"</span><span class="o">:</span> <span class="s2">"Helping out the world's greatest boss."</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="update-an-work-experience">Update an work experience</h2>
+
+<p>Update the provided work experience.</p>
+
+<pre><code>PATCH /candidates/:candidate_id/resume/work_experiences/:work_experience_id
+</code></pre>
+
+<h3 id="input-1">Input</h3>
+
+<dl>
+<dt>description</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>source</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>date</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>
+</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
+  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="response-3">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"8d0ec106-2ea1-4905-bcc6-86317085607b"</span><span class="p">,</span>
+  <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant to the Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"employer_name"</span><span class="o">:</span> <span class="s2">"Dunder Miflin"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Scranton"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Pennsylvania"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2010-01-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2012-12-01"</span><span class="p">,</span>
+  <span class="s2">"duties"</span><span class="o">:</span> <span class="s2">"Helping out the world's greatest boss."</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="delete-an-work-experience">Delete an work experience</h2>
+
+<p>Delete the provided work experience.</p>
+
+<pre><code>DELETE /candidates/:candidate_id/resume/work_experiences/:work_experience_id
+</code></pre>
+
+<h3 id="response-4">Response</h3>
+
+<pre class="headers no-response"><code>Status: 204 No Content
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">

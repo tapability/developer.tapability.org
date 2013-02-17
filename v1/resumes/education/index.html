@@ -33,6 +33,10 @@
 
 <ul id="markdown-toc">
 <li><a href="#list-educations-on-a-resume">List educations on a resume</a></li>
+  <li><a href="#get-a-single-education">Get a single education</a></li>
+  <li><a href="#create-an-education">Create an education</a></li>
+  <li><a href="#update-an-education">Update an education</a></li>
+  <li><a href="#delete-an-education">Delete an education</a></li>
 </ul><p><em>These endpoints are only available to counselors and candidates, candidates can only view/edit items in their own resume</em></p>
 
 <h2 id="list-educations-on-a-resume">List educations on a resume</h2>
@@ -63,6 +67,135 @@ X-RateLimit-Remaining: 4999</code></pre>
     <span class="s2">"graduated"</span><span class="o">:</span> <span class="kc">true</span>
   <span class="p">}</span>
 <span class="p">]</span></code></pre>
+
+<h2 id="get-a-single-education">Get a single education</h2>
+
+<pre><code>GET /candidates/:candidate_id/resume/educations/:education_id
+</code></pre>
+
+<h3 id="response-1">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"4f87f608-7872-4c37-a845-cbe08d880489"</span><span class="p">,</span>
+  <span class="s2">"institution"</span><span class="o">:</span> <span class="s2">"University of California at Santa Barbara"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Santa Barbara"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"California"</span><span class="p">,</span>
+  <span class="s2">"degree"</span><span class="o">:</span> <span class="s2">"Bachelor of Science"</span><span class="p">,</span>
+  <span class="s2">"concentration"</span><span class="o">:</span> <span class="s2">"Computer Science"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2002-09-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2006-06-01"</span><span class="p">,</span>
+  <span class="s2">"graduated"</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="create-an-education">Create an education</h2>
+
+<p>Create a new education.</p>
+
+<pre><code>POST /candidates/:candidate_id/resume/educations
+</code></pre>
+
+<h3 id="input">Input</h3>
+
+<dl>
+<dt>description</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>source</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>date</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>
+</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
+  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="response-2">Response</h3>
+
+<pre class="headers"><code>Status: 201 Created
+Location: https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/educations/2894c358-f2d0-4a3f-952f-5afdb8dd81aa
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"4f87f608-7872-4c37-a845-cbe08d880489"</span><span class="p">,</span>
+  <span class="s2">"institution"</span><span class="o">:</span> <span class="s2">"University of California at Santa Barbara"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Santa Barbara"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"California"</span><span class="p">,</span>
+  <span class="s2">"degree"</span><span class="o">:</span> <span class="s2">"Bachelor of Science"</span><span class="p">,</span>
+  <span class="s2">"concentration"</span><span class="o">:</span> <span class="s2">"Computer Science"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2002-09-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2006-06-01"</span><span class="p">,</span>
+  <span class="s2">"graduated"</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="update-an-education">Update an education</h2>
+
+<p>Update the provided education.</p>
+
+<pre><code>PATCH /candidates/:candidate_id/resume/educations/:education_id
+</code></pre>
+
+<h3 id="input-1">Input</h3>
+
+<dl>
+<dt>description</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>source</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>date</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>
+</dd>
+</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
+  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="response-3">Response</h3>
+
+<pre class="headers"><code>Status: 200 OK
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"4f87f608-7872-4c37-a845-cbe08d880489"</span><span class="p">,</span>
+  <span class="s2">"institution"</span><span class="o">:</span> <span class="s2">"University of California at Santa Barbara"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Santa Barbara"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"California"</span><span class="p">,</span>
+  <span class="s2">"degree"</span><span class="o">:</span> <span class="s2">"Bachelor of Science"</span><span class="p">,</span>
+  <span class="s2">"concentration"</span><span class="o">:</span> <span class="s2">"Computer Science"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2002-09-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2006-06-01"</span><span class="p">,</span>
+  <span class="s2">"graduated"</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span></code></pre>
+
+<h2 id="delete-an-education">Delete an education</h2>
+
+<p>Delete the provided education.</p>
+
+<pre><code>DELETE /candidates/:candidate_id/resume/educations/:education_id
+</code></pre>
+
+<h3 id="response-4">Response</h3>
+
+<pre class="headers no-response"><code>Status: 204 No Content
+X-RateLimit-Limit: 5000
+X-RateLimit-Remaining: 4999</code></pre>
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">
