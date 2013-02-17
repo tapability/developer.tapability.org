@@ -34,14 +34,14 @@
 <ul id="markdown-toc">
 <li><a href="#list-locations-on-a-resume">List locations on a resume</a></li>
   <li><a href="#get-a-single-location">Get a single location</a></li>
-  <li><a href="#create-an-location">Create an location</a></li>
-  <li><a href="#update-an-location">Update an location</a></li>
-  <li><a href="#delete-an-location">Delete an location</a></li>
+  <li><a href="#create-a-location">Create a location</a></li>
+  <li><a href="#update-a-location">Update a location</a></li>
+  <li><a href="#delete-a-location">Delete a location</a></li>
 </ul><p><em>These endpoints are only available to counselors and candidates, candidates can only view/edit items in their own resume</em></p>
 
 <h2 id="list-locations-on-a-resume">List locations on a resume</h2>
 
-<p>Get a candidate’s locations listed on their resume</p>
+<p>Get a candidate’s available work locations</p>
 
 <pre><code>GET /candidates/:candidate_id/resume/locations
 </code></pre>
@@ -89,9 +89,11 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="create-an-location">Create an location</h2>
+<h2 id="create-a-location">Create a location</h2>
 
 <p>Create a new location.</p>
+
+<p><em>Note: you can provide any US city and state here, but if we do not have any existing entries with the supplied city, you will not immediately receive geographic coordinates. Coordinates for new cities are determined asyncronously on our servers. If you need the coordinates immediately, perform a subsequent GET a few seconds after creating. Major cities will return coordinates immediately.</em></p>
 
 <pre><code>POST /candidates/:candidate_id/resume/locations
 </code></pre>
@@ -99,28 +101,27 @@ X-RateLimit-Remaining: 4999</code></pre>
 <h3 id="input">Input</h3>
 
 <dl>
-<dt>description</dt>
+<dt>city</dt>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
-  <dt>source</dt>
+  <dt>state</dt>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
-  <dt>date</dt>
+  <dt>distance</dt>
   <dd>
-<em>Optional</em> <strong>string</strong>
-</dd>
+<em>Optional</em> <strong>integer</strong> - miles from the center of this city where the candidate is willing to work, defaults to 10</dd>
 </dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
-  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
-  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"San Diego"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"California"</span><span class="p">,</span>
+  <span class="s2">"distance"</span><span class="o">:</span> <span class="mi">10</span>
 <span class="p">}</span></code></pre>
 
 <h3 id="response-2">Response</h3>
 
 <pre class="headers"><code>Status: 201 Created
-Location: https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/locations/2894c358-f2d0-4a3f-952f-5afdb8dd81aa
+Location: https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/locations/8a58f89e-d8fe-4477-aeaf-fe37f7c86e8c
 X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999</code></pre>
 
@@ -135,7 +136,7 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="update-an-location">Update an location</h2>
+<h2 id="update-a-location">Update a location</h2>
 
 <p>Update the provided location.</p>
 
@@ -145,22 +146,21 @@ X-RateLimit-Remaining: 4999</code></pre>
 <h3 id="input-1">Input</h3>
 
 <dl>
-<dt>description</dt>
+<dt>city</dt>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
-  <dt>source</dt>
+  <dt>state</dt>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
-  <dt>date</dt>
+  <dt>distance</dt>
   <dd>
-<em>Optional</em> <strong>string</strong>
-</dd>
+<em>Optional</em> <strong>integer</strong> - miles from the center of this city where the candidate is willing to work, defaults to 10</dd>
 </dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
-  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
-  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"San Diego"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"California"</span><span class="p">,</span>
+  <span class="s2">"distance"</span><span class="o">:</span> <span class="mi">10</span>
 <span class="p">}</span></code></pre>
 
 <h3 id="response-3">Response</h3>
@@ -180,7 +180,7 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="delete-an-location">Delete an location</h2>
+<h2 id="delete-a-location">Delete a location</h2>
 
 <p>Delete the provided location.</p>
 
@@ -211,7 +211,7 @@ X-RateLimit-Remaining: 4999</code></pre>
           <ul class="js-guides">
             <li><a href="/v1/resumes/awards/">Awards</a></li>
             <li><a href="/v1/resumes/certifications/">Certifications</a></li>
-            <li><a href="/v1/resumes/education/">Education</a></li>
+            <li><a href="/v1/resumes/educations/">Educations</a></li>
             <li><a href="/v1/resumes/locations/">Locations</a></li>
             <li><a href="/v1/resumes/memberships/">Memberships</a></li>
             <li><a href="/v1/resumes/publications/">Publications</a></li>
