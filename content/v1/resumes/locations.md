@@ -11,7 +11,7 @@ _These endpoints are only available to counselors and candidates, candidates can
 
 ## List locations on a resume
 
-Get a candidate's locations listed on their resume
+Get a candidate's available work locations
 
     GET /candidates/:candidate_id/resume/locations
 
@@ -29,35 +29,37 @@ Get a candidate's locations listed on their resume
 <%= headers 200 %>
 <%= json :resume_location %>
 
-## Create an location
+## Create a location
 
 Create a new location.
+
+_Note: you can provide any US city and state here, but if we do not have any existing entries with the supplied city, you will not immediately receive geographic coordinates. Coordinates for new cities are determined asyncronously on our servers. If you need the coordinates immediately, perform a subsequent GET a few seconds after creating. Major cities will return coordinates immediately._
 
     POST /candidates/:candidate_id/resume/locations
 
 ### Input
 
-description
+city
 : _Required_ **string**
 
-source
+state
 : _Required_ **string**
 
-date
-: _Optional_ **string**
+distance
+: _Optional_ **integer** - miles from the center of this city where the candidate is willing to work, defaults to 10
 
 <%= json \
-    :description => "Emmy - Best Actor",
-    :source      => "Academy of Television Arts and Sciences",
-    :date        => "2012-09-23"
+    :city     => "San Diego",
+    :state    => "California",
+    :distance => 10
 %>
 
 ### Response
 
-<%= headers 201, :Location => "https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/locations/2894c358-f2d0-4a3f-952f-5afdb8dd81aa" %>
+<%= headers 201, :Location => "https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/locations/8a58f89e-d8fe-4477-aeaf-fe37f7c86e8c" %>
 <%= json :resume_location %>
 
-## Update an location
+## Update a location
 
 Update the provided location.
 
@@ -65,19 +67,19 @@ Update the provided location.
 
 ### Input
 
-description
+city
 : _Required_ **string**
 
-source
+state
 : _Required_ **string**
 
-date
-: _Optional_ **string**
+distance
+: _Optional_ **integer** - miles from the center of this city where the candidate is willing to work, defaults to 10
 
 <%= json \
-    :description => "Emmy - Best Actor",
-    :source      => "Academy of Television Arts and Sciences",
-    :date        => "2012-09-23"
+    :city     => "San Diego",
+    :state    => "California",
+    :distance => 10
 %>
 
 ### Response
@@ -85,7 +87,7 @@ date
 <%= headers 200 %>
 <%= json :resume_location %>
 
-## Delete an location
+## Delete a location
 
 Delete the provided location.
 

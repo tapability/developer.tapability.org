@@ -57,7 +57,7 @@ date
 <%= headers 201, :Location => "https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/certifications/2894c358-f2d0-4a3f-952f-5afdb8dd81aa" %>
 <%= json :resume_certification %>
 
-## Update an certification
+## Update a certification
 
 Update the provided certification.
 
