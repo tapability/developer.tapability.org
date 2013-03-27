@@ -39,6 +39,65 @@
   <li><a href="#delete-a-location">Delete a location</a></li>
 </ul><p><em>These endpoints are only available to counselors and candidates, candidates can only view/edit items in their own resume</em></p>
 
+<p>Many of the endpoints below require a US state as input. States must precisely match one from the following list. Specifying an invalid state will result in a <code>422 Unprocessable Entity</code> response.</p>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">[</span>
+  <span class="s2">"Alabama"</span><span class="p">,</span>
+  <span class="s2">"Alaska"</span><span class="p">,</span>
+  <span class="s2">"Arizona"</span><span class="p">,</span>
+  <span class="s2">"Arkansas"</span><span class="p">,</span>
+  <span class="s2">"California"</span><span class="p">,</span>
+  <span class="s2">"Colorado"</span><span class="p">,</span>
+  <span class="s2">"Connecticut"</span><span class="p">,</span>
+  <span class="s2">"Delaware"</span><span class="p">,</span>
+  <span class="s2">"District of Columbia"</span><span class="p">,</span>
+  <span class="s2">"Florida"</span><span class="p">,</span>
+  <span class="s2">"Georgia"</span><span class="p">,</span>
+  <span class="s2">"Guam"</span><span class="p">,</span>
+  <span class="s2">"Hawaii"</span><span class="p">,</span>
+  <span class="s2">"Idaho"</span><span class="p">,</span>
+  <span class="s2">"Illinois"</span><span class="p">,</span>
+  <span class="s2">"Indiana"</span><span class="p">,</span>
+  <span class="s2">"Iowa"</span><span class="p">,</span>
+  <span class="s2">"Kansas"</span><span class="p">,</span>
+  <span class="s2">"Kentucky"</span><span class="p">,</span>
+  <span class="s2">"Louisiana"</span><span class="p">,</span>
+  <span class="s2">"Maine"</span><span class="p">,</span>
+  <span class="s2">"Maryland"</span><span class="p">,</span>
+  <span class="s2">"Massachusetts"</span><span class="p">,</span>
+  <span class="s2">"Michigan"</span><span class="p">,</span>
+  <span class="s2">"Minnesota"</span><span class="p">,</span>
+  <span class="s2">"Mississippi"</span><span class="p">,</span>
+  <span class="s2">"Missouri"</span><span class="p">,</span>
+  <span class="s2">"Montana"</span><span class="p">,</span>
+  <span class="s2">"Nebraska"</span><span class="p">,</span>
+  <span class="s2">"Nevada"</span><span class="p">,</span>
+  <span class="s2">"New Hampshire"</span><span class="p">,</span>
+  <span class="s2">"New Jersey"</span><span class="p">,</span>
+  <span class="s2">"New Mexico"</span><span class="p">,</span>
+  <span class="s2">"New York"</span><span class="p">,</span>
+  <span class="s2">"North Carolina"</span><span class="p">,</span>
+  <span class="s2">"North Dakota"</span><span class="p">,</span>
+  <span class="s2">"Ohio"</span><span class="p">,</span>
+  <span class="s2">"Oklahoma"</span><span class="p">,</span>
+  <span class="s2">"Oregon"</span><span class="p">,</span>
+  <span class="s2">"Pennsylvania"</span><span class="p">,</span>
+  <span class="s2">"Puerto Rico"</span><span class="p">,</span>
+  <span class="s2">"Rhode Island"</span><span class="p">,</span>
+  <span class="s2">"South Carolina"</span><span class="p">,</span>
+  <span class="s2">"South Dakota"</span><span class="p">,</span>
+  <span class="s2">"Tennessee"</span><span class="p">,</span>
+  <span class="s2">"Texas"</span><span class="p">,</span>
+  <span class="s2">"Utah"</span><span class="p">,</span>
+  <span class="s2">"Vermont"</span><span class="p">,</span>
+  <span class="s2">"Virginia"</span><span class="p">,</span>
+  <span class="s2">"Virgin Islands"</span><span class="p">,</span>
+  <span class="s2">"Washington"</span><span class="p">,</span>
+  <span class="s2">"West Virginia"</span><span class="p">,</span>
+  <span class="s2">"Wisconsin"</span><span class="p">,</span>
+  <span class="s2">"Wyoming"</span>
+<span class="p">]</span></code></pre>
+
 <h2 id="list-locations-on-a-resume">List locations on a resume</h2>
 
 <p>Get a candidate’s available work locations</p>
