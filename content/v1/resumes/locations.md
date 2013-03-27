@@ -9,6 +9,10 @@ title: Locations | Tapability API
 
 _These endpoints are only available to counselors and candidates, candidates can only view/edit items in their own resume_
 
+Many of the endpoints below require a US state as input. States must precisely match one from the following list. Specifying an invalid state will result in a `422 Unprocessable Entity` response.
+
+<%= json(:states) %>
+
 ## List locations on a resume
 
 Get a candidate's available work locations
