@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Language" content="en-us" />
   <meta http-equiv="imagetoolbar" content="false" />
   <meta name="MSSmartTagsPreventParsing" content="true" />
-  <title>Employers | Tapability API</title>
+  <title>Categories | Tapability API</title>
   <link href="/css/reset.css" rel="stylesheet" type="text/css" />
   <link href="/css/960.css" rel="stylesheet" type="text/css" />
   <link href="/css/uv_active4d.css" rel="stylesheet" type="text/css" />
@@ -29,19 +29,17 @@
 
   <div id="wrapper">
     <div class="content">
-      <h1 id="employers-api">Employers API</h1>
+      <h1 id="categories-api">Categories API</h1>
 
 <ul id="markdown-toc">
-<li><a href="#get-my-profile">Get my profile</a></li>
-  <li><a href="#list-employers">List employers</a></li>
-  <li><a href="#get-a-single-employer">Get a single employer</a></li>
-</ul><h2 id="get-my-profile">Get my profile</h2>
+<li><a href="#list-categories">List categories</a></li>
+</ul><p>These are read-only API endpoints for fetching information about job and resume categories</p>
 
-<p><em>This endpoint is only available to employers</em></p>
+<h2 id="list-categories">List categories</h2>
 
-<p>Get the currently logged in employer’s info</p>
+<p>List all job and resume categories. Unlike most other collection endpoints, this list is not paginated. It always returns all categories.</p>
 
-<pre><code>GET /me
+<pre><code>GET /categories
 </code></pre>
 
 <h3 id="response">Response</h3>
@@ -50,66 +48,17 @@
 X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999</code></pre>
 
-<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"38075a53-a470-4654-a4e6-4d67c2207b35"</span><span class="p">,</span>
-  <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Dunder Miflin"</span><span class="p">,</span>
-  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/employers/38075a53-a470-4654-a4e6-4d67c2207b35"</span><span class="p">,</span>
-  <span class="s2">"website_url"</span><span class="o">:</span> <span class="s2">"http://www.dundermiflin.com"</span>
-<span class="p">}</span></code></pre>
-
-<h2 id="list-employers">List employers</h2>
-
-<p>List all employers in the system.</p>
-
-<pre><code>GET /employers
-</code></pre>
-
-<h3 id="parameters">Parameters</h3>
-
-<dl>
-<dt>sort</dt>
-  <dd>
-<code>created_at</code>, <code>updated_at</code>, <code>name</code>, default: <code>name</code>.</dd>
-  <dt>direction</dt>
-  <dd>
-<code>asc</code> or <code>desc</code>, default: <code>asc</code>
-</dd>
-</dl><h3 id="response-1">Response</h3>
-
-<pre class="headers"><code>Status: 200 OK
-Link: &lt;https://tapability.org/api/v1/resource?page=2&gt;; rel="next",
-      &lt;https://tapability.org/api/v1/resource?page=5&gt;; rel="last"
-X-RateLimit-Limit: 5000
-X-RateLimit-Remaining: 4999</code></pre>
-
 <pre class="highlight"><code class="language-javascript"><span class="p">[</span>
   <span class="p">{</span>
-    <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"38075a53-a470-4654-a4e6-4d67c2207b35"</span><span class="p">,</span>
-    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Dunder Miflin"</span><span class="p">,</span>
-    <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/employers/38075a53-a470-4654-a4e6-4d67c2207b35"</span><span class="p">,</span>
-    <span class="s2">"website_url"</span><span class="o">:</span> <span class="s2">"http://www.dundermiflin.com"</span>
+    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Accounting"</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Manufacturing"</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Sales"</span>
   <span class="p">}</span>
 <span class="p">]</span></code></pre>
-
-<h2 id="get-a-single-employer">Get a single employer</h2>
-
-<p>Get a single employer with their ID.</p>
-
-<pre><code>GET /employers/:employer_id
-</code></pre>
-
-<h3 id="response-2">Response</h3>
-
-<pre class="headers"><code>Status: 200 OK
-X-RateLimit-Limit: 5000
-X-RateLimit-Remaining: 4999</code></pre>
-
-<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"38075a53-a470-4654-a4e6-4d67c2207b35"</span><span class="p">,</span>
-  <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Dunder Miflin"</span><span class="p">,</span>
-  <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/employers/38075a53-a470-4654-a4e6-4d67c2207b35"</span><span class="p">,</span>
-  <span class="s2">"website_url"</span><span class="o">:</span> <span class="s2">"http://www.dundermiflin.com"</span>
-<span class="p">}</span></code></pre>
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">

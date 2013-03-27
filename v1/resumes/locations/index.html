@@ -33,9 +33,7 @@
 
 <ul id="markdown-toc">
 <li><a href="#list-locations-on-a-resume">List locations on a resume</a></li>
-  <li><a href="#get-a-single-location">Get a single location</a></li>
   <li><a href="#create-a-location">Create a location</a></li>
-  <li><a href="#update-a-location">Update a location</a></li>
   <li><a href="#delete-a-location">Delete a location</a></li>
 </ul><p><em>These endpoints are only available to counselors and candidates, candidates can only view/edit items in their own resume</em></p>
 
@@ -126,28 +124,6 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="p">}</span>
 <span class="p">]</span></code></pre>
 
-<h2 id="get-a-single-location">Get a single location</h2>
-
-<pre><code>GET /candidates/:candidate_id/resume/locations/:location_id
-</code></pre>
-
-<h3 id="response-1">Response</h3>
-
-<pre class="headers"><code>Status: 200 OK
-X-RateLimit-Limit: 5000
-X-RateLimit-Remaining: 4999</code></pre>
-
-<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"8a58f89e-d8fe-4477-aeaf-fe37f7c86e8c"</span><span class="p">,</span>
-  <span class="s2">"distance"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"San Diego"</span><span class="p">,</span>
-  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"California"</span><span class="p">,</span>
-  <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
-    <span class="mf">32.7993</span><span class="p">,</span>
-    <span class="o">-</span><span class="mf">117.16</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre>
-
 <h2 id="create-a-location">Create a location</h2>
 
 <p>Create a new location.</p>
@@ -177,54 +153,10 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="s2">"distance"</span><span class="o">:</span> <span class="mi">10</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="response-2">Response</h3>
+<h3 id="response-1">Response</h3>
 
 <pre class="headers"><code>Status: 201 Created
 Location: https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/locations/8a58f89e-d8fe-4477-aeaf-fe37f7c86e8c
-X-RateLimit-Limit: 5000
-X-RateLimit-Remaining: 4999</code></pre>
-
-<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"8a58f89e-d8fe-4477-aeaf-fe37f7c86e8c"</span><span class="p">,</span>
-  <span class="s2">"distance"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"San Diego"</span><span class="p">,</span>
-  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"California"</span><span class="p">,</span>
-  <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
-    <span class="mf">32.7993</span><span class="p">,</span>
-    <span class="o">-</span><span class="mf">117.16</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre>
-
-<h2 id="update-a-location">Update a location</h2>
-
-<p>Update the provided location.</p>
-
-<pre><code>PATCH /candidates/:candidate_id/resume/locations/:location_id
-</code></pre>
-
-<h3 id="input-1">Input</h3>
-
-<dl>
-<dt>city</dt>
-  <dd>
-<em>Required</em> <strong>string</strong>
-</dd>
-  <dt>state</dt>
-  <dd>
-<em>Required</em> <strong>string</strong>
-</dd>
-  <dt>distance</dt>
-  <dd>
-<em>Optional</em> <strong>integer</strong> - miles from the center of this city where the candidate is willing to work, defaults to 10</dd>
-</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"San Diego"</span><span class="p">,</span>
-  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"California"</span><span class="p">,</span>
-  <span class="s2">"distance"</span><span class="o">:</span> <span class="mi">10</span>
-<span class="p">}</span></code></pre>
-
-<h3 id="response-3">Response</h3>
-
-<pre class="headers"><code>Status: 200 OK
 X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999</code></pre>
 
@@ -246,7 +178,7 @@ X-RateLimit-Remaining: 4999</code></pre>
 <pre><code>DELETE /candidates/:candidate_id/resume/locations/:location_id
 </code></pre>
 
-<h3 id="response-4">Response</h3>
+<h3 id="response-2">Response</h3>
 
 <pre class="headers no-response"><code>Status: 204 No Content
 X-RateLimit-Limit: 5000
@@ -278,6 +210,9 @@ X-RateLimit-Remaining: 4999</code></pre>
             <li><a href="/v1/resumes/trainings/">Trainings</a></li>
             <li><a href="/v1/resumes/work_experience/">Work Experience</a></li>
           </ul>
+        </li>
+        <li class="js-topic">
+          <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v1/categories/">Categories</a></h3>
         </li>
         <li class="js-topic">
           <h3><a href="#" class="js-expand-btn collapsed">&nbsp;</a><a href="/v1/counselors/">Counselors</a></h3>
