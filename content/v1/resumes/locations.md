@@ -24,15 +24,6 @@ Get a candidate's available work locations
 <%= headers 200, :pagination => true %>
 <%= json(:resume_location) { |h| [h] } %>
 
-## Get a single location
-
-    GET /candidates/:candidate_id/resume/locations/:location_id
-
-### Response
-
-<%= headers 200 %>
-<%= json :resume_location %>
-
 ## Create a location
 
 Create a new location.
@@ -61,34 +52,6 @@ distance
 ### Response
 
 <%= headers 201, :Location => "https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/locations/8a58f89e-d8fe-4477-aeaf-fe37f7c86e8c" %>
-<%= json :resume_location %>
-
-## Update a location
-
-Update the provided location.
-
-    PATCH /candidates/:candidate_id/resume/locations/:location_id
-
-### Input
-
-city
-: _Required_ **string**
-
-state
-: _Required_ **string**
-
-distance
-: _Optional_ **integer** - miles from the center of this city where the candidate is willing to work, defaults to 10
-
-<%= json \
-    :city     => "San Diego",
-    :state    => "California",
-    :distance => 10
-%>
-
-### Response
-
-<%= headers 200 %>
 <%= json :resume_location %>
 
 ## Delete a location
