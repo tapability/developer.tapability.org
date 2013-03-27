@@ -18,4 +18,4 @@ List all job and resume categories. Unlike most other collection endpoints, this
 ### Response
 
 <%= headers 200 %>
-<%= json(:categories) } %>
+<%= json(:categories) %>
