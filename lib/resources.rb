@@ -271,7 +271,9 @@ module Tapability
       "certifications"   => [RESUME_CERTIFICATION],
       "memberships"      => [RESUME_MEMBERSHIP],
       "publications"     => [RESUME_PUBLICATION],
-      "trainings"        => [RESUME_TRAINING]
+      "trainings"        => [RESUME_TRAINING],
+      "languages"        => [RESUME_LANGUAGE],
+      "clearances"       => [RESUME_CLEARANCE]
     })
 
     RESUME_AUTHENTICATED = RESUME_FULL.merge({})
