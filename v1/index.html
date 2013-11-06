@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Language" content="en-us" />
   <meta http-equiv="imagetoolbar" content="false" />
   <meta name="MSSmartTagsPreventParsing" content="true" />
-  <title>Tapability API v1</title>
+  <title>TAP API v1</title>
   <link href="/css/reset.css" rel="stylesheet" type="text/css" />
   <link href="/css/960.css" rel="stylesheet" type="text/css" />
   <link href="/css/uv_active4d.css" rel="stylesheet" type="text/css" />
@@ -18,25 +18,25 @@
   <div id="header-wrapper">
     <div id="header">
       <div>
-        <a class="logo" href="/"><img src="/images/logo.png" height="45" alt="Tapability" /></a>
+        <a class="logo" href="/"><img src="/images/logo.png" width="200" alt="Tapability" /></a>
         <ul class="nav">
           <li><a href="/v1/">API v1</a></li>
           <li><a href="https://tapability.org/contact">Support</a></li>
         </ul>
       </div>
-    </div><!-- #header -->
-  </div><!-- #header-wrapper -->
+    </div>
+  </div>
 
   <div id="wrapper">
     <div class="content">
       <h1 id="api-v1">API v1</h1>
 
-<p>This describes the resources that make up the official Tapability API v1. If
+<p>This describes the resources that make up the official TAP API v1. If
 you have any problems or requests please contact
 <a href="mailto:support@tapability.org?subject=API">support</a>.</p>
 
 <ul id="markdown-toc">
-<li><a href="#schema">Schema</a></li>
+  <li><a href="#schema">Schema</a></li>
   <li><a href="#parameters">Parameters</a></li>
   <li><a href="#client-errors">Client Errors</a></li>
   <li><a href="#http-redirects">HTTP Redirects</a></li>
@@ -46,7 +46,9 @@ you have any problems or requests please contact
   <li><a href="#rate-limiting">Rate Limiting</a></li>
   <li><a href="#user-agent-required">User Agent Required</a></li>
   <li><a href="#conditional-requests">Conditional requests</a></li>
-</ul><h2 id="schema">Schema</h2>
+</ul>
+
+<h2 id="schema">Schema</h2>
 
 <p>All API access is over HTTPS, and accessed from the <code>tapability.org/api/v1</code>
 domain.  All data is sent and received as JSON.</p>
@@ -56,16 +58,20 @@ $ curl -i https://tapability.org/api/v1/jobs
 
 HTTP/1.1 200 OK
 Server: nginx
-Date: Fri, 12 Oct 2012 23:33:14 GMT
-Content-Type: application/json; charset=utf-8
+Content-Type: application/json;charset=utf-8
+Date: Wed, 06 Nov 2013 16:18:21 GMT
 Connection: keep-alive
 Status: 200 OK
+Strict-Transport-Security: max-age=31536000
 ETag: "a00049ba79152d03380c34652f2cb612"
 X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999
 Content-Length: 5
 Cache-Control: max-age=0, private, must-revalidate
 X-Content-Type-Options: nosniff
+X-Powered-By: Phusion Passenger
+X-Request-Id: f5c3278a-9f6f-42e4-a9cd-607a24e3b2c6
+X-Runtime: 0.004713
 
 []
 </pre>
@@ -93,7 +99,7 @@ $ curl -i "https://tapability.org/api/v1/jobs?sort=created"
 with a Content-Type of ‘application/x-www-form-urlencoded’:</p>
 
 <pre class="terminal">
-$ curl -H "X-Tapability-Token: TOKEN" -d '{"title":"Assistant Regional Manager","description":""}' https://tapability.org/api/v1/jobs
+$ curl -H "X-TAP-Token: TOKEN" -d '{"title":"Assistant Regional Manager","description":""}' https://tapability.org/api/v1/jobs
 </pre>
 
 <h2 id="client-errors">Client Errors</h2>
@@ -102,7 +108,7 @@ $ curl -H "X-Tapability-Token: TOKEN" -d '{"title":"Assistant Regional Manager",
 receive request bodies:</p>
 
 <ol>
-<li>
+  <li>
     <p>Sending invalid JSON will result in a <code>400 Bad Request</code> response.</p>
 
     <pre><code> HTTP/1.1 400 Bad Request
@@ -140,13 +146,15 @@ response.</p>
  }
 </code></pre>
   </li>
-</ol><p>All error objects have resource and field properties so that your client
+</ol>
+
+<p>All error objects have resource and field properties so that your client
 can tell what the problem is.  There’s also an error code to let you
 know what is wrong with the field.  These are the possible validation error
 codes:</p>
 
 <dl>
-<dt>missing</dt>
+  <dt>missing</dt>
   <dd>This means a resource does not exist.</dd>
   <dt>missing_field</dt>
   <dd>This means a required field on a resource has not been set.</dd>
@@ -157,18 +165,22 @@ for that resource should be able to give you more specific information.</dd>
   <dd>This means another resource has the same value as this field.  This
 can happen in resources that must have some unique key (such as Label
 names).</dd>
-</dl><p>If resources have custom validation errors, they will be documented with the resource.</p>
+</dl>
+
+<p>If resources have custom validation errors, they will be documented with the resource.</p>
 
 <h2 id="http-redirects">HTTP Redirects</h2>
 
 <p>API v1 uses HTTP redirection where appropriate. Clients should assume that any request may result in a redirection. Receiving an HTTP redirection is <em>not</em> an error and clients should follow that redirect. Redirect responses will have a <code>Location</code> header field which contains the URI of the resource to which the client should repeat the requests.</p>
 
 <dl>
-<dt>301</dt>
+  <dt>301</dt>
   <dd>Permanent redirection. The URI you used to make the request has be superseded by the one specified in the <code>Location</code> header field. This and all future requests to this resource should be directed the new URI.</dd>
   <dt>302, 307</dt>
   <dd>Temporary redirection. The request should be repeated verbatim to the URI specified in the <code>Location</code> header field but clients should continue to use the original URI for future requests.</dd>
-</dl><p>Other redirection status codes may be used in accordance with the HTTP 1.1 spec.</p>
+</dl>
+
+<p>Other redirection status codes may be used in accordance with the HTTP 1.1 spec.</p>
 
 <h2 id="http-verbs">HTTP Verbs</h2>
 
@@ -176,7 +188,7 @@ names).</dd>
 action.</p>
 
 <dl>
-<dt>HEAD</dt>
+  <dt>HEAD</dt>
   <dd>Can be issued against any resource to get just the HTTP header info.</dd>
   <dt>GET</dt>
   <dd>Used for retrieving resources.</dd>
@@ -189,7 +201,9 @@ job resource has <code>title</code> and <code>description</code> attributes, amo
 PATCH request may accept one or more of the attributes to update the resource.</dd>
   <dt>DELETE</dt>
   <dd>Used for deleting resources.</dd>
-</dl><h2 id="authentication">Authentication</h2>
+</dl>
+
+<h2 id="authentication">Authentication</h2>
 
 <p>ALL API requests require authentication. There are no exceptions.</p>
 
@@ -213,7 +227,7 @@ $ curl -u "dwight@tapability.org" https://tapability.org/api/v1/me/keys
 <h3 id="token-sent-in-a-header">Token (sent in a header)</h3>
 
 <pre class="terminal">
-$ curl -H "X-Tapability-Token: TOKEN" https://tapability.org/api/v1/me
+$ curl -H "X-TAP-Token: TOKEN" https://tapability.org/api/v1/me
 </pre>
 
 <h2 id="pagination">Pagination</h2>
@@ -235,7 +249,7 @@ follow these Link header values instead of constructing your own URLs.</p>
 <p>The possible <code>rel</code> values are:</p>
 
 <dl>
-<dt><code>next</code></dt>
+  <dt><code>next</code></dt>
   <dd>Shows the URL of the immediate next page of results.</dd>
   <dt><code>last</code></dt>
   <dd>Shows the URL of the last page of results.</dd>
@@ -243,7 +257,9 @@ follow these Link header values instead of constructing your own URLs.</p>
   <dd>Shows the URL of the first page of results.</dd>
   <dt><code>prev</code></dt>
   <dd>Shows the URL of the immediate previous page of results.</dd>
-</dl><h2 id="rate-limiting">Rate Limiting</h2>
+</dl>
+
+<h2 id="rate-limiting">Rate Limiting</h2>
 
 <p>We limit API requests to 2,000 per hour. You can check the returned HTTP headers
 of any API request to see your current status:</p>
@@ -305,6 +321,7 @@ Vary: Accept, Authorization, Cookie
 X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999
 </pre>
+
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">
@@ -328,7 +345,9 @@ X-RateLimit-Remaining: 4999
             <li><a href="/v1/resumes/awards/">Awards</a></li>
             <li><a href="/v1/resumes/categories/">Categories</a></li>
             <li><a href="/v1/resumes/certifications/">Certifications</a></li>
+            <li><a href="/v1/resumes/clearances/">Clearances</a></li>
             <li><a href="/v1/resumes/educations/">Educations</a></li>
+            <li><a href="/v1/resumes/languages/">Languages</a></li>
             <li><a href="/v1/resumes/locations/">Locations</a></li>
             <li><a href="/v1/resumes/memberships/">Memberships</a></li>
             <li><a href="/v1/resumes/publications/">Publications</a></li>

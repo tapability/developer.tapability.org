@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Language" content="en-us" />
   <meta http-equiv="imagetoolbar" content="false" />
   <meta name="MSSmartTagsPreventParsing" content="true" />
-  <title>Jobs | Tapability API</title>
+  <title>Jobs | TAP API</title>
   <link href="/css/reset.css" rel="stylesheet" type="text/css" />
   <link href="/css/960.css" rel="stylesheet" type="text/css" />
   <link href="/css/uv_active4d.css" rel="stylesheet" type="text/css" />
@@ -18,21 +18,21 @@
   <div id="header-wrapper">
     <div id="header">
       <div>
-        <a class="logo" href="/"><img src="/images/logo.png" height="45" alt="Tapability" /></a>
+        <a class="logo" href="/"><img src="/images/logo.png" width="200" alt="Tapability" /></a>
         <ul class="nav">
           <li><a href="/v1/">API v1</a></li>
           <li><a href="https://tapability.org/contact">Support</a></li>
         </ul>
       </div>
-    </div><!-- #header -->
-  </div><!-- #header-wrapper -->
+    </div>
+  </div>
 
   <div id="wrapper">
     <div class="content">
       <h1 id="jobs-api">Jobs API</h1>
 
 <ul id="markdown-toc">
-<li><a href="#list-owned-jobs">List owned jobs</a></li>
+  <li><a href="#list-owned-jobs">List owned jobs</a></li>
   <li><a href="#list-all-jobs">List all jobs</a></li>
   <li><a href="#list-employer-jobs">List employer jobs</a></li>
   <li><a href="#list-nearby-jobs">List nearby jobs</a></li>
@@ -41,7 +41,9 @@
   <li><a href="#update-a-job">Update a job</a></li>
   <li><a href="#expire-a-job">Expire a job</a></li>
   <li><a href="#delete-a-job">Delete a job</a></li>
-</ul><h2 id="list-owned-jobs">List owned jobs</h2>
+</ul>
+
+<h2 id="list-owned-jobs">List owned jobs</h2>
 
 <p><em>This endpoint is only available to employers</em></p>
 
@@ -60,14 +62,16 @@
 <h3 id="parameters">Parameters</h3>
 
 <dl>
-<dt>sort</dt>
+  <dt>sort</dt>
   <dd>
 <code>created_at</code>, <code>updated_at</code>, <code>title</code>, default: <code>created_at</code>.</dd>
   <dt>direction</dt>
   <dd>
 <code>asc</code> or <code>desc</code>, default: <code>desc</code>
 </dd>
-</dl><h2 id="list-employer-jobs">List employer jobs</h2>
+</dl>
+
+<h2 id="list-employer-jobs">List employer jobs</h2>
 
 <p>List jobs owned by the specified employer.</p>
 
@@ -77,14 +81,16 @@
 <h3 id="parameters-1">Parameters</h3>
 
 <dl>
-<dt>sort</dt>
+  <dt>sort</dt>
   <dd>
 <code>created_at</code>, default: <code>created_at</code>.</dd>
   <dt>direction</dt>
   <dd>
 <code>asc</code> or <code>desc</code>, default: <code>desc</code>
 </dd>
-</dl><h2 id="list-nearby-jobs">List nearby jobs</h2>
+</dl>
+
+<h2 id="list-nearby-jobs">List nearby jobs</h2>
 
 <pre><code>GET /jobs/:latitude/:longitude
 </code></pre>
@@ -92,14 +98,16 @@
 <h3 id="parameters-2">Parameters</h3>
 
 <dl>
-<dt>sort</dt>
+  <dt>sort</dt>
   <dd>
 <code>created_at</code>, <code>updated_at</code>, <code>title</code>, default: <code>created_at</code>.</dd>
   <dt>direction</dt>
   <dd>
 <code>asc</code> or <code>desc</code>, default: <code>desc</code>
 </dd>
-</dl><h3 id="response">Response</h3>
+</dl>
+
+<h3 id="response">Response</h3>
 
 <pre class="headers"><code>Status: 200 OK
 Link: &lt;https://tapability.org/api/v1/resource?page=2&gt;; rel="next",
@@ -176,7 +184,7 @@ X-RateLimit-Remaining: 4999</code></pre>
 <h3 id="input">Input</h3>
 
 <dl>
-<dt>title</dt>
+  <dt>title</dt>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
@@ -187,7 +195,9 @@ X-RateLimit-Remaining: 4999</code></pre>
   <dt>coordinates</dt>
   <dd>
 <em>Optional</em> <strong>array</strong> - must contain valid latitude and longitude as floats</dd>
-</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+</dl>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
   <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
   <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
@@ -237,7 +247,7 @@ X-RateLimit-Remaining: 4999</code></pre>
 <h3 id="input-1">Input</h3>
 
 <dl>
-<dt>title</dt>
+  <dt>title</dt>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
@@ -248,7 +258,9 @@ X-RateLimit-Remaining: 4999</code></pre>
   <dt>coordinates</dt>
   <dd>
 <em>Optional</em> <strong>array</strong> - must contain valid latitude and longitude as floats</dd>
-</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+</dl>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
   <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
   <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
@@ -336,6 +348,7 @@ X-RateLimit-Remaining: 4999</code></pre>
 <pre class="headers no-response"><code>Status: 204 No Content
 X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999</code></pre>
+
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">
@@ -359,7 +372,9 @@ X-RateLimit-Remaining: 4999</code></pre>
             <li><a href="/v1/resumes/awards/">Awards</a></li>
             <li><a href="/v1/resumes/categories/">Categories</a></li>
             <li><a href="/v1/resumes/certifications/">Certifications</a></li>
+            <li><a href="/v1/resumes/clearances/">Clearances</a></li>
             <li><a href="/v1/resumes/educations/">Educations</a></li>
+            <li><a href="/v1/resumes/languages/">Languages</a></li>
             <li><a href="/v1/resumes/locations/">Locations</a></li>
             <li><a href="/v1/resumes/memberships/">Memberships</a></li>
             <li><a href="/v1/resumes/publications/">Publications</a></li>

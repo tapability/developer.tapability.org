@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Language" content="en-us" />
   <meta http-equiv="imagetoolbar" content="false" />
   <meta name="MSSmartTagsPreventParsing" content="true" />
-  <title>Trainings | Tapability API</title>
+  <title>Trainings | TAP API</title>
   <link href="/css/reset.css" rel="stylesheet" type="text/css" />
   <link href="/css/960.css" rel="stylesheet" type="text/css" />
   <link href="/css/uv_active4d.css" rel="stylesheet" type="text/css" />
@@ -18,26 +18,28 @@
   <div id="header-wrapper">
     <div id="header">
       <div>
-        <a class="logo" href="/"><img src="/images/logo.png" height="45" alt="Tapability" /></a>
+        <a class="logo" href="/"><img src="/images/logo.png" width="200" alt="Tapability" /></a>
         <ul class="nav">
           <li><a href="/v1/">API v1</a></li>
           <li><a href="https://tapability.org/contact">Support</a></li>
         </ul>
       </div>
-    </div><!-- #header -->
-  </div><!-- #header-wrapper -->
+    </div>
+  </div>
 
   <div id="wrapper">
     <div class="content">
       <h1 id="trainings-api">Trainings API</h1>
 
 <ul id="markdown-toc">
-<li><a href="#list-trainings-on-a-resume">List trainings on a resume</a></li>
+  <li><a href="#list-trainings-on-a-resume">List trainings on a resume</a></li>
   <li><a href="#get-a-single-training">Get a single training</a></li>
   <li><a href="#create-an-training">Create an training</a></li>
   <li><a href="#update-an-training">Update an training</a></li>
   <li><a href="#delete-an-training">Delete an training</a></li>
-</ul><p><em>These endpoints are only available to counselors and candidates, candidates can only view/edit items in their own resume</em></p>
+</ul>
+
+<p><em>These endpoints are only available to counselors and candidates, candidates can only view/edit items in their own resume</em></p>
 
 <h2 id="list-trainings-on-a-resume">List trainings on a resume</h2>
 
@@ -91,7 +93,7 @@ X-RateLimit-Remaining: 4999</code></pre>
 <h3 id="input">Input</h3>
 
 <dl>
-<dt>description</dt>
+  <dt>description</dt>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
@@ -103,7 +105,9 @@ X-RateLimit-Remaining: 4999</code></pre>
   <dd>
 <em>Optional</em> <strong>string</strong>
 </dd>
-</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+</dl>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
   <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
   <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
@@ -133,7 +137,7 @@ X-RateLimit-Remaining: 4999</code></pre>
 <h3 id="input-1">Input</h3>
 
 <dl>
-<dt>description</dt>
+  <dt>description</dt>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
@@ -145,7 +149,9 @@ X-RateLimit-Remaining: 4999</code></pre>
   <dd>
 <em>Optional</em> <strong>string</strong>
 </dd>
-</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+</dl>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
   <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
   <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
@@ -176,6 +182,7 @@ X-RateLimit-Remaining: 4999</code></pre>
 <pre class="headers no-response"><code>Status: 204 No Content
 X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999</code></pre>
+
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">
@@ -199,7 +206,9 @@ X-RateLimit-Remaining: 4999</code></pre>
             <li><a href="/v1/resumes/awards/">Awards</a></li>
             <li><a href="/v1/resumes/categories/">Categories</a></li>
             <li><a href="/v1/resumes/certifications/">Certifications</a></li>
+            <li><a href="/v1/resumes/clearances/">Clearances</a></li>
             <li><a href="/v1/resumes/educations/">Educations</a></li>
+            <li><a href="/v1/resumes/languages/">Languages</a></li>
             <li><a href="/v1/resumes/locations/">Locations</a></li>
             <li><a href="/v1/resumes/memberships/">Memberships</a></li>
             <li><a href="/v1/resumes/publications/">Publications</a></li>

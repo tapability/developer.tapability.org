@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Language" content="en-us" />
   <meta http-equiv="imagetoolbar" content="false" />
   <meta name="MSSmartTagsPreventParsing" content="true" />
-  <title>Counselors | Tapability API</title>
+  <title>Counselors | TAP API</title>
   <link href="/css/reset.css" rel="stylesheet" type="text/css" />
   <link href="/css/960.css" rel="stylesheet" type="text/css" />
   <link href="/css/uv_active4d.css" rel="stylesheet" type="text/css" />
@@ -18,27 +18,29 @@
   <div id="header-wrapper">
     <div id="header">
       <div>
-        <a class="logo" href="/"><img src="/images/logo.png" height="45" alt="Tapability" /></a>
+        <a class="logo" href="/"><img src="/images/logo.png" width="200" alt="Tapability" /></a>
         <ul class="nav">
           <li><a href="/v1/">API v1</a></li>
           <li><a href="https://tapability.org/contact">Support</a></li>
         </ul>
       </div>
-    </div><!-- #header -->
-  </div><!-- #header-wrapper -->
+    </div>
+  </div>
 
   <div id="wrapper">
     <div class="content">
       <h1 id="counselors-api">Counselors API</h1>
 
 <ul id="markdown-toc">
-<li><a href="#get-my-profile">Get my profile</a></li>
+  <li><a href="#get-my-profile">Get my profile</a></li>
   <li><a href="#list-counselors">List counselors</a></li>
   <li><a href="#get-a-single-counselor">Get a single counselor</a></li>
   <li><a href="#create-a-new-counselor">Create a new counselor</a></li>
   <li><a href="#edit-a-counselor">Edit a counselor</a></li>
   <li><a href="#delete-a-counselor">Delete a counselor</a></li>
-</ul><h2 id="get-my-profile">Get my profile</h2>
+</ul>
+
+<h2 id="get-my-profile">Get my profile</h2>
 
 <p><em>This endpoint is only available to counselors</em></p>
 
@@ -76,14 +78,16 @@ X-RateLimit-Remaining: 4999</code></pre>
 <h3 id="parameters">Parameters</h3>
 
 <dl>
-<dt>sort</dt>
+  <dt>sort</dt>
   <dd>
 <code>created_at</code>, <code>updated_at</code>, <code>first_name</code>, <code>last_name</code>, default: <code>last_name</code>.</dd>
   <dt>direction</dt>
   <dd>
 <code>asc</code> or <code>desc</code>, default: <code>asc</code>
 </dd>
-</dl><h3 id="response-1">Response</h3>
+</dl>
+
+<h3 id="response-1">Response</h3>
 
 <pre class="headers"><code>Status: 200 OK
 Link: &lt;https://tapability.org/api/v1/resource?page=2&gt;; rel="next",
@@ -198,6 +202,7 @@ X-RateLimit-Remaining: 4999</code></pre>
 <pre class="headers no-response"><code>Status: 204 No Content
 X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999</code></pre>
+
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">
@@ -221,7 +226,9 @@ X-RateLimit-Remaining: 4999</code></pre>
             <li><a href="/v1/resumes/awards/">Awards</a></li>
             <li><a href="/v1/resumes/categories/">Categories</a></li>
             <li><a href="/v1/resumes/certifications/">Certifications</a></li>
+            <li><a href="/v1/resumes/clearances/">Clearances</a></li>
             <li><a href="/v1/resumes/educations/">Educations</a></li>
+            <li><a href="/v1/resumes/languages/">Languages</a></li>
             <li><a href="/v1/resumes/locations/">Locations</a></li>
             <li><a href="/v1/resumes/memberships/">Memberships</a></li>
             <li><a href="/v1/resumes/publications/">Publications</a></li>

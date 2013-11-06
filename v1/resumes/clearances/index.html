@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Language" content="en-us" />
   <meta http-equiv="imagetoolbar" content="false" />
   <meta name="MSSmartTagsPreventParsing" content="true" />
-  <title>Awards | TAP API</title>
+  <title>Security Clearances | TAP API</title>
   <link href="/css/reset.css" rel="stylesheet" type="text/css" />
   <link href="/css/960.css" rel="stylesheet" type="text/css" />
   <link href="/css/uv_active4d.css" rel="stylesheet" type="text/css" />
@@ -29,23 +29,23 @@
 
   <div id="wrapper">
     <div class="content">
-      <h1 id="awards-api">Awards API</h1>
+      <h1 id="security-clearances-api">Security Clearances API</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#list-awards-on-a-resume">List awards on a resume</a></li>
-  <li><a href="#get-a-single-award">Get a single award</a></li>
-  <li><a href="#create-an-award">Create an award</a></li>
-  <li><a href="#update-an-award">Update an award</a></li>
-  <li><a href="#delete-an-award">Delete an award</a></li>
+  <li><a href="#list-clearances-on-a-resume">List clearances on a resume</a></li>
+  <li><a href="#get-a-single-clearance">Get a single clearance</a></li>
+  <li><a href="#create-an-clearance">Create an clearance</a></li>
+  <li><a href="#update-an-clearance">Update an clearance</a></li>
+  <li><a href="#delete-an-clearance">Delete an clearance</a></li>
 </ul>
 
 <p><em>These endpoints are only available to counselors and candidates, candidates can only view/edit items in their own resume</em></p>
 
-<h2 id="list-awards-on-a-resume">List awards on a resume</h2>
+<h2 id="list-clearances-on-a-resume">List clearances on a resume</h2>
 
-<p>Get a candidate’s awards listed on their resume</p>
+<p>Get a candidate’s clearances listed on their resume</p>
 
-<pre><code>GET /candidates/:candidate_id/resume/awards
+<pre><code>GET /candidates/:candidate_id/resume/clearances
 </code></pre>
 
 <h3 id="response">Response</h3>
@@ -58,16 +58,17 @@ X-RateLimit-Remaining: 4999</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">[</span>
   <span class="p">{</span>
-    <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"2894c358-f2d0-4a3f-952f-5afdb8dd81aa"</span><span class="p">,</span>
-    <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
-    <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
-    <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+    <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"f2478635-dec5-4ebf-ada4-454ade6a6d3b"</span><span class="p">,</span>
+    <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Top Secret"</span><span class="p">,</span>
+    <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"National Security Agency"</span><span class="p">,</span>
+    <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2011-01-01"</span><span class="p">,</span>
+    <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2013-12-31"</span>
   <span class="p">}</span>
 <span class="p">]</span></code></pre>
 
-<h2 id="get-a-single-award">Get a single award</h2>
+<h2 id="get-a-single-clearance">Get a single clearance</h2>
 
-<pre><code>GET /candidates/:candidate_id/resume/awards/:award_id
+<pre><code>GET /candidates/:candidate_id/resume/clearances/:clearance_id
 </code></pre>
 
 <h3 id="response-1">Response</h3>
@@ -77,17 +78,18 @@ X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"2894c358-f2d0-4a3f-952f-5afdb8dd81aa"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
-  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
-  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"f2478635-dec5-4ebf-ada4-454ade6a6d3b"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Top Secret"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"National Security Agency"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2011-01-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2013-12-31"</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="create-an-award">Create an award</h2>
+<h2 id="create-an-clearance">Create an clearance</h2>
 
-<p>Create a new award.</p>
+<p>Create a new clearance.</p>
 
-<pre><code>POST /candidates/:candidate_id/resume/awards
+<pre><code>POST /candidates/:candidate_id/resume/clearances
 </code></pre>
 
 <h3 id="input">Input</h3>
@@ -101,37 +103,41 @@ X-RateLimit-Remaining: 4999</code></pre>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
-  <dt>date</dt>
+  <dt>start_date</dt>
   <dd>
-<em>Optional</em> <strong>string</strong>
-</dd>
+<em>Required</em> <strong>string</strong> - Date this clearance took effect</dd>
+  <dt>end_date</dt>
+  <dd>
+<em>Required</em> <strong>string</strong> - Date this clearance expires</dd>
 </dl>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
-  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
-  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Top Secret"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"National Security Agency"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2011-01-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2013-12-31"</span>
 <span class="p">}</span></code></pre>
 
 <h3 id="response-2">Response</h3>
 
 <pre class="headers"><code>Status: 201 Created
-Location: https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/awards/2894c358-f2d0-4a3f-952f-5afdb8dd81aa
+Location: https://tapability.org/api/v1/candidates/eaf3022f-330e-46db-8665-01e0969ff2f7/resume/clearances/2894c358-f2d0-4a3f-952f-5afdb8dd81aa
 X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"2894c358-f2d0-4a3f-952f-5afdb8dd81aa"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
-  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
-  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"f2478635-dec5-4ebf-ada4-454ade6a6d3b"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Top Secret"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"National Security Agency"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2011-01-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2013-12-31"</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="update-an-award">Update an award</h2>
+<h2 id="update-an-clearance">Update an clearance</h2>
 
-<p>Update the provided award.</p>
+<p>Update the provided clearance.</p>
 
-<pre><code>PATCH /candidates/:candidate_id/resume/awards/:award_id
+<pre><code>PATCH /candidates/:candidate_id/resume/clearances/:clearance_id
 </code></pre>
 
 <h3 id="input-1">Input</h3>
@@ -145,16 +151,19 @@ X-RateLimit-Remaining: 4999</code></pre>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
-  <dt>date</dt>
+  <dt>start_date</dt>
   <dd>
-<em>Optional</em> <strong>string</strong>
-</dd>
+<em>Required</em> <strong>string</strong> - Date this clearance took effect</dd>
+  <dt>end_date</dt>
+  <dd>
+<em>Required</em> <strong>string</strong> - Date this clearance expires</dd>
 </dl>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
-  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
-  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Top Secret"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"National Security Agency"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2011-01-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2013-12-31"</span>
 <span class="p">}</span></code></pre>
 
 <h3 id="response-3">Response</h3>
@@ -164,17 +173,18 @@ X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999</code></pre>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"2894c358-f2d0-4a3f-952f-5afdb8dd81aa"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Emmy - Best Actor"</span><span class="p">,</span>
-  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"Academy of Television Arts and Sciences"</span><span class="p">,</span>
-  <span class="s2">"date"</span><span class="o">:</span> <span class="s2">"2012-09-23"</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"f2478635-dec5-4ebf-ada4-454ade6a6d3b"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Top Secret"</span><span class="p">,</span>
+  <span class="s2">"source"</span><span class="o">:</span> <span class="s2">"National Security Agency"</span><span class="p">,</span>
+  <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2011-01-01"</span><span class="p">,</span>
+  <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2013-12-31"</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="delete-an-award">Delete an award</h2>
+<h2 id="delete-an-clearance">Delete an clearance</h2>
 
-<p>Delete the provided award.</p>
+<p>Delete the provided clearance.</p>
 
-<pre><code>DELETE /candidates/:candidate_id/resume/awards/:award_id
+<pre><code>DELETE /candidates/:candidate_id/resume/clearances/:clearance_id
 </code></pre>
 
 <h3 id="response-4">Response</h3>

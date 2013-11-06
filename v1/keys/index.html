@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Language" content="en-us" />
   <meta http-equiv="imagetoolbar" content="false" />
   <meta name="MSSmartTagsPreventParsing" content="true" />
-  <title>Authentication/Keys | Tapability API</title>
+  <title>Authentication/Keys | TAP API</title>
   <link href="/css/reset.css" rel="stylesheet" type="text/css" />
   <link href="/css/960.css" rel="stylesheet" type="text/css" />
   <link href="/css/uv_active4d.css" rel="stylesheet" type="text/css" />
@@ -18,29 +18,31 @@
   <div id="header-wrapper">
     <div id="header">
       <div>
-        <a class="logo" href="/"><img src="/images/logo.png" height="45" alt="Tapability" /></a>
+        <a class="logo" href="/"><img src="/images/logo.png" width="200" alt="Tapability" /></a>
         <ul class="nav">
           <li><a href="/v1/">API v1</a></li>
           <li><a href="https://tapability.org/contact">Support</a></li>
         </ul>
       </div>
-    </div><!-- #header -->
-  </div><!-- #header-wrapper -->
+    </div>
+  </div>
 
   <div id="wrapper">
     <div class="content">
       <h1 id="authenticationkeys-api">Authentication/Keys API</h1>
 
 <ul id="markdown-toc">
-<li><a href="#create-a-new-key">Create a new key</a></li>
+  <li><a href="#create-a-new-key">Create a new key</a></li>
   <li><a href="#revoke-a-keys-access">Revoke a key’s access</a></li>
-</ul><p>Keys can be created and deleted, but cannot be listed as a collection or updated. To
+</ul>
+
+<p>Keys can be created and deleted, but cannot be listed as a collection or updated. To
 see a listing of account tokens, you must login to your account via the web at
 tapability.org.</p>
 
 <h2 id="create-a-new-key">Create a new key</h2>
 
-<p>This endpoint requires a separate <code>X-Tapability-Client-Token</code> header that is available
+<p>This endpoint requires a separate <code>X-TAP-Client-Token</code> header that is available
 upon request. If you are a developer building an application for Tapability and need the
 ability to generate access keys, please contact support.</p>
 
@@ -56,17 +58,21 @@ existing token.</p>
 <p><em>You must specify the account type</em> so we know the type of account you’re trying to authenticate.</p>
 
 <dl>
-<dt>account_type</dt>
+  <dt>account_type</dt>
   <dd>
 <code>candidate</code>, <code>counselor</code>, <code>employer</code>, default: <code>candidate</code>.</dd>
-</dl><h3 id="input">Input</h3>
+</dl>
+
+<h3 id="input">Input</h3>
 
 <dl>
-<dt>description</dt>
+  <dt>description</dt>
   <dd>
 <em>Optional</em> <strong>string</strong>
 </dd>
-</dl><pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+</dl>
+
+<pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Dwight's iPhone"</span>
 <span class="p">}</span></code></pre>
 
@@ -95,6 +101,7 @@ are using to authenticate, but you can revoke other keys as well.</p>
 <pre class="headers no-response"><code>Status: 204 No Content
 X-RateLimit-Limit: 5000
 X-RateLimit-Remaining: 4999</code></pre>
+
     </div>
 
   <div id="js-sidebar" class="sidebar-shell">
@@ -118,7 +125,9 @@ X-RateLimit-Remaining: 4999</code></pre>
             <li><a href="/v1/resumes/awards/">Awards</a></li>
             <li><a href="/v1/resumes/categories/">Categories</a></li>
             <li><a href="/v1/resumes/certifications/">Certifications</a></li>
+            <li><a href="/v1/resumes/clearances/">Clearances</a></li>
             <li><a href="/v1/resumes/educations/">Educations</a></li>
+            <li><a href="/v1/resumes/languages/">Languages</a></li>
             <li><a href="/v1/resumes/locations/">Locations</a></li>
             <li><a href="/v1/resumes/memberships/">Memberships</a></li>
             <li><a href="/v1/resumes/publications/">Publications</a></li>
