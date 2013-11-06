@@ -1,5 +1,5 @@
 ---
-title: Resumes | Tapability API
+title: Resumes | TAP API
 ---
 
 # Resumes API

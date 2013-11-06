@@ -1,5 +1,5 @@
 ---
-title: Authentication/Keys | Tapability API
+title: Authentication/Keys | TAP API
 ---
 
 # Authentication/Keys API
@@ -13,7 +13,7 @@ tapability.org.
 
 ## Create a new key
 
-This endpoint requires a separate `X-Tapability-Client-Token` header that is available
+This endpoint requires a separate `X-TAP-Client-Token` header that is available
 upon request. If you are a developer building an application for Tapability and need the
 ability to generate access keys, please contact support.
 

@@ -1,5 +1,5 @@
 ---
-title: Publications | Tapability API
+title: Publications | TAP API
 ---
 
 # Publications API

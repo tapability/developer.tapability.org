@@ -1,10 +1,10 @@
 ---
-title: Tapability API
+title: TAP API
 ---
 
-# The Tapability API
+# The TAP API
 
-This describes the resources that make up the official Tapability API v1. If
+This describes the resources that make up the official TAP API v1. If
 you have any problems or requests please contact
 [support](mailto:support@tapability.org?subject=API).
 

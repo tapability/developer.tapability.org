@@ -1,5 +1,5 @@
 ---
-title: Educations | Tapability API
+title: Educations | TAP API
 ---
 
 # Educations API

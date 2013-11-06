@@ -1,5 +1,5 @@
 ---
-title: Memberships | Tapability API
+title: Memberships | TAP API
 ---
 
 # Memberships API

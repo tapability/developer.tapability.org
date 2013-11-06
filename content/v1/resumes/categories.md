@@ -1,5 +1,5 @@
 ---
-title: Categories | Tapability API
+title: Categories | TAP API
 ---
 
 # Categories API

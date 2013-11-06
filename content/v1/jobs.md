@@ -1,5 +1,5 @@
 ---
-title: Jobs | Tapability API
+title: Jobs | TAP API
 ---
 
 # Jobs API

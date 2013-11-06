@@ -1,5 +1,5 @@
 ---
-title: Work Experiences | Tapability API
+title: Work Experiences | TAP API
 ---
 
 # Work Experiences API

@@ -1,5 +1,5 @@
 ---
-title: Candidates | Tapability API
+title: Candidates | TAP API
 ---
 
 # Candidates API

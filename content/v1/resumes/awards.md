@@ -1,5 +1,5 @@
 ---
-title: Awards | Tapability API
+title: Awards | TAP API
 ---
 
 # Awards API

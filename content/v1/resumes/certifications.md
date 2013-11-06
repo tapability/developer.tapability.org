@@ -1,5 +1,5 @@
 ---
-title: Certifications | Tapability API
+title: Certifications | TAP API
 ---
 
 # Certifications API

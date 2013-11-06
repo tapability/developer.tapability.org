@@ -1,5 +1,5 @@
 ---
-title: Counselors | Tapability API
+title: Counselors | TAP API
 ---
 
 # Counselors API

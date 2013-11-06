@@ -1,5 +1,5 @@
 ---
-title: Trainings | Tapability API
+title: Trainings | TAP API
 ---
 
 # Trainings API

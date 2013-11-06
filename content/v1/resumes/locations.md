@@ -1,5 +1,5 @@
 ---
-title: Locations | Tapability API
+title: Locations | TAP API
 ---
 
 # Locations API

@@ -204,6 +204,23 @@ module Tapability
       "end_date"      => "2013-12-31"
     }
 
+    RESUME_CLEARANCE = {
+      "id"            => "f2478635-dec5-4ebf-ada4-454ade6a6d3b",
+      "description"   => "Top Secret",
+      "source"        => "National Security Agency",
+      "start_date"    => "2011-01-01",
+      "end_date"      => "2013-12-31"
+    }
+
+    RESUME_LANGUAGE = {
+      "id"      => "f8c78d5c-f206-41bc-aca3-bd1b4882b4df",
+      "name"    => "Spanish",
+      "fluency" => "Conversational",
+      "read"    => true,
+      "write"   => false,
+      "speak"   => false
+    }
+
     RESUME_MEMBERSHIP = {
       "id"            => "698c9bfb-29d9-4df1-9425-e93c948965d1",
       "description"   => "American Society for Training and Development (ASTD)",
