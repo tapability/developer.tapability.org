@@ -23,6 +23,7 @@ module Tapability
         405 => '405 Method not allowed',
         409 => '409 Conflict',
         422 => '422 Unprocessable Entity',
+        429 => '429 Too Many Requests',
         500 => '500 Server Error'
       }
 
@@ -144,22 +145,36 @@ module Tapability
     COUNSELOR_AUTHENTICATED = COUNSELOR_FULL.merge({})
 
     JOB = {
-      "id"           => "a3338736-ffcd-472e-9b82-b7ca38eaa355",
-      "title"        => "Assistant Regional Manager",
-      "description"  => "",
-      "api_url"      => "https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355",
-      "html_url"     => "https://tapability.org/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355",
-      "created_at"   => CREATED_AT,
-      "updated_at"   => CREATED_AT,
-      "expires_at"   => "2013-02-09T17:58:26Z",
-      "expired"      => false,
-      "employer"     => EMPLOYER,
-      "coordinates"  => COORDINATES
+      "id"            => "a3338736-ffcd-472e-9b82-b7ca38eaa355",
+      "title"         => "Assistant Regional Manager",
+      "category_name" => "Sales",
+      "description"   => "Actually, it's Assistant TO the Regional Manager",
+      "city"          => "Scranton",
+      "state"         => "Pennsylvania",
+      "api_url"       => "https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355",
+      "html_url"      => "https://tapability.org/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355",
+      "created_at"    => CREATED_AT,
+      "updated_at"    => CREATED_AT,
+      "expires_at"    => "2013-02-09T17:58:26Z",
+      "expired"       => false,
+      "employer"      => EMPLOYER,
+      "coordinates"   => COORDINATES
     }
 
-    JOB_FULL = JOB.merge({})
+    JOB_FULL = JOB.merge({
+      "street1"       => nil,
+      "street2"       => nil,
+      "zip"           => nil,
+      "contact_name"  => nil,
+      "contact_email" => nil,
+      "contact_phone" => nil
+    })
 
-    JOB_AUTHENTICATED = JOB_FULL.merge({})
+    JOB_AUTHENTICATED = JOB_FULL.merge({
+      "code"         => "MIFLIN0001",
+      "deleted"      => false,
+      "deleted_at"   => nil
+    })
 
     JOB_AUTHENTICATED_EXPIRED = JOB_AUTHENTICATED.merge({
       "expired"      => true,

@@ -85,13 +85,42 @@ title
 description
 : _Required_ **string**
 
+category_name
+: _Required_ **string**
+
+code
+: _Required_ **string**
+
+street1
+: _Optional_ **string**
+
+street2
+: _Optional_ **string**
+
+city
+: _Required_ **string**
+
+state
+: _Required_ **string**
+
+zip
+: _Optional_ **string**
+
 coordinates
 : _Optional_ **array** - must contain valid latitude and longitude as floats
 
+apply_url
+: _Required_ **string**
+
 <%= json \
-    :title       => "Assistant Regional Manager",
-    :description => "",
-    :coordinates => [32.7993,-117.16]
+    :code          => "MIFLIN0001"
+    :title         => "Assistant Regional Manager",
+    :description   => "Actually, it's Assistant TO the Regional Manager",
+    :category_name => "Sales",
+    :city          => "Scranton",
+    :state         => "Pennsylvania",
+    :coordinates   => [32.7993,-117.16],
+    :apply_url     => "http://www.dundermiflin.com/jobs/arm"
 %>
 
 ### Response
@@ -115,13 +144,17 @@ title
 description
 : _Required_ **string**
 
-coordinates
-: _Optional_ **array** - must contain valid latitude and longitude as floats
+code
+: _Required_ **string**
+
+apply_url
+: _Required_ **string**
 
 <%= json \
+    :code        => "MIFLIN0001"
     :title       => "Assistant Regional Manager",
-    :description => "",
-    :coordinates => [32.7993,-117.16]
+    :description => "Actually, it's Assistant TO the Regional Manager",
+    :apply_url   => "http://www.dundermiflin.com/jobs/arm"
 %>
 
 ### Response
