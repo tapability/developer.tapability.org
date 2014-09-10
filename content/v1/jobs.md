@@ -86,7 +86,7 @@ description
 : _Required_ **string**
 
 category_name
-: _Required_ **string**
+: _Required_ **string** - must be a valid category name, full list available in the Categories API
 
 code
 : _Required_ **string**
