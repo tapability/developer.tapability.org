@@ -113,7 +113,7 @@ apply_url
 : _Required_ **string**
 
 <%= json \
-    :code          => "MIFLIN0001"
+    :code          => "MIFLIN0001",
     :title         => "Assistant Regional Manager",
     :description   => "Actually, it's Assistant TO the Regional Manager",
     :category_name => "Sales",
@@ -151,7 +151,7 @@ apply_url
 : _Required_ **string**
 
 <%= json \
-    :code        => "MIFLIN0001"
+    :code        => "MIFLIN0001",
     :title       => "Assistant Regional Manager",
     :description => "Actually, it's Assistant TO the Regional Manager",
     :apply_url   => "http://www.dundermiflin.com/jobs/arm"
