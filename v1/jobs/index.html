@@ -119,7 +119,10 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="p">{</span>
     <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
     <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
-    <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="s2">"category_name"</span><span class="o">:</span> <span class="s2">"Sales"</span><span class="p">,</span>
+    <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Actually, it's Assistant TO the Regional Manager"</span><span class="p">,</span>
+    <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Scranton"</span><span class="p">,</span>
+    <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Pennsylvania"</span><span class="p">,</span>
     <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
     <span class="s2">"html_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
     <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
@@ -153,7 +156,10 @@ X-RateLimit-Remaining: 4999</code></pre>
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"category_name"</span><span class="o">:</span> <span class="s2">"Sales"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Actually, it's Assistant TO the Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Scranton"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Pennsylvania"</span><span class="p">,</span>
   <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"html_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
@@ -169,7 +175,13 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
     <span class="mf">32.7993</span><span class="p">,</span>
     <span class="o">-</span><span class="mf">117.16</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"street1"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"street2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"zip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_name"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_phone"</span><span class="o">:</span> <span class="kc">null</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="create-a-job">Create a job</h2>
@@ -192,18 +204,55 @@ X-RateLimit-Remaining: 4999</code></pre>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
+  <dt>category_name</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>code</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>street1</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>
+</dd>
+  <dt>street2</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>
+</dd>
+  <dt>city</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>state</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>zip</dt>
+  <dd>
+<em>Optional</em> <strong>string</strong>
+</dd>
   <dt>coordinates</dt>
   <dd>
 <em>Optional</em> <strong>array</strong> - must contain valid latitude and longitude as floats</dd>
+  <dt>apply_url</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
 </dl>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"MIFLIN0001"</span><span class="p">,</span>
   <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Actually, it's Assistant TO the Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"category_name"</span><span class="o">:</span> <span class="s2">"Sales"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Scranton"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Pennsylvania"</span><span class="p">,</span>
   <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
     <span class="mf">32.7993</span><span class="p">,</span>
     <span class="o">-</span><span class="mf">117.16</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"apply_url"</span><span class="o">:</span> <span class="s2">"http://www.dundermiflin.com/jobs/arm"</span>
 <span class="p">}</span></code></pre>
 
 <h3 id="response-2">Response</h3>
@@ -216,7 +265,10 @@ X-RateLimit-Remaining: 4999</code></pre>
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"category_name"</span><span class="o">:</span> <span class="s2">"Sales"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Actually, it's Assistant TO the Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Scranton"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Pennsylvania"</span><span class="p">,</span>
   <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"html_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
@@ -232,7 +284,16 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
     <span class="mf">32.7993</span><span class="p">,</span>
     <span class="o">-</span><span class="mf">117.16</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"street1"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"street2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"zip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_name"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_phone"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"MIFLIN0001"</span><span class="p">,</span>
+  <span class="s2">"deleted"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"deleted_at"</span><span class="o">:</span> <span class="kc">null</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="update-a-job">Update a job</h2>
@@ -255,18 +316,21 @@ X-RateLimit-Remaining: 4999</code></pre>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
-  <dt>coordinates</dt>
+  <dt>code</dt>
   <dd>
-<em>Optional</em> <strong>array</strong> - must contain valid latitude and longitude as floats</dd>
+<em>Required</em> <strong>string</strong>
+</dd>
+  <dt>apply_url</dt>
+  <dd>
+<em>Required</em> <strong>string</strong>
+</dd>
 </dl>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"MIFLIN0001"</span><span class="p">,</span>
   <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
-  <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
-    <span class="mf">32.7993</span><span class="p">,</span>
-    <span class="o">-</span><span class="mf">117.16</span>
-  <span class="p">]</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Actually, it's Assistant TO the Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"apply_url"</span><span class="o">:</span> <span class="s2">"http://www.dundermiflin.com/jobs/arm"</span>
 <span class="p">}</span></code></pre>
 
 <h3 id="response-3">Response</h3>
@@ -278,7 +342,10 @@ X-RateLimit-Remaining: 4999</code></pre>
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"category_name"</span><span class="o">:</span> <span class="s2">"Sales"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Actually, it's Assistant TO the Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Scranton"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Pennsylvania"</span><span class="p">,</span>
   <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"html_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
@@ -294,7 +361,16 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
     <span class="mf">32.7993</span><span class="p">,</span>
     <span class="o">-</span><span class="mf">117.16</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"street1"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"street2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"zip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_name"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_phone"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"MIFLIN0001"</span><span class="p">,</span>
+  <span class="s2">"deleted"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"deleted_at"</span><span class="o">:</span> <span class="kc">null</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="expire-a-job">Expire a job</h2>
@@ -315,7 +391,10 @@ X-RateLimit-Remaining: 4999</code></pre>
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Assistant Regional Manager"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"category_name"</span><span class="o">:</span> <span class="s2">"Sales"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Actually, it's Assistant TO the Regional Manager"</span><span class="p">,</span>
+  <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Scranton"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Pennsylvania"</span><span class="p">,</span>
   <span class="s2">"api_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/api/v1/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"html_url"</span><span class="o">:</span> <span class="s2">"https://tapability.org/jobs/a3338736-ffcd-472e-9b82-b7ca38eaa355"</span><span class="p">,</span>
   <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2012-12-09T17:58:26Z"</span><span class="p">,</span>
@@ -331,7 +410,16 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">[</span>
     <span class="mf">32.7993</span><span class="p">,</span>
     <span class="o">-</span><span class="mf">117.16</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"street1"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"street2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"zip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_name"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"contact_phone"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"MIFLIN0001"</span><span class="p">,</span>
+  <span class="s2">"deleted"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"deleted_at"</span><span class="o">:</span> <span class="kc">null</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="delete-a-job">Delete a job</h2>
