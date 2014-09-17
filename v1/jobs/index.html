@@ -181,7 +181,14 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="s2">"zip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"contact_name"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"contact_email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="s2">"contact_phone"</span><span class="o">:</span> <span class="kc">null</span>
+  <span class="s2">"contact_phone"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"full_time"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"part_time"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"internship"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"volunteer"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"contract"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"temporary"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"telecommute"</span><span class="o">:</span> <span class="kc">false</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="create-a-job">Create a job</h2>
@@ -238,6 +245,34 @@ X-RateLimit-Remaining: 4999</code></pre>
   <dd>
 <em>Required</em> <strong>string</strong>
 </dd>
+  <dt>full_time</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>part_time</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>internship</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>volunteer</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>contract</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>temporary</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>telecommute</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
 </dl>
 
 <pre class="highlight"><code class="language-javascript"><span class="p">{</span>
@@ -290,6 +325,13 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="s2">"contact_name"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"contact_email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"contact_phone"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"full_time"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"part_time"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"internship"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"volunteer"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"contract"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"temporary"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"telecommute"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"MIFLIN0001"</span><span class="p">,</span>
   <span class="s2">"deleted"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="s2">"deleted_at"</span><span class="o">:</span> <span class="kc">null</span>
@@ -305,6 +347,8 @@ X-RateLimit-Remaining: 4999</code></pre>
 </code></pre>
 
 <h3 id="input-1">Input</h3>
+
+<p><em>Note: you cannot update job category or location info when updating.</em></p>
 
 <dl>
   <dt>title</dt>
@@ -322,6 +366,34 @@ X-RateLimit-Remaining: 4999</code></pre>
   <dt>apply_url</dt>
   <dd>
 <em>Required</em> <strong>string</strong>
+</dd>
+  <dt>full_time</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>part_time</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>internship</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>volunteer</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>contract</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>temporary</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
+</dd>
+  <dt>telecommute</dt>
+  <dd>
+<em>Optional</em> <strong>boolean</strong>
 </dd>
 </dl>
 
@@ -367,6 +439,13 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="s2">"contact_name"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"contact_email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"contact_phone"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"full_time"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"part_time"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"internship"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"volunteer"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"contract"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"temporary"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"telecommute"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"MIFLIN0001"</span><span class="p">,</span>
   <span class="s2">"deleted"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="s2">"deleted_at"</span><span class="o">:</span> <span class="kc">null</span>
@@ -416,6 +495,13 @@ X-RateLimit-Remaining: 4999</code></pre>
   <span class="s2">"contact_name"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"contact_email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
   <span class="s2">"contact_phone"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="s2">"full_time"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"part_time"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"internship"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"volunteer"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"contract"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"temporary"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"telecommute"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="s2">"code"</span><span class="o">:</span> <span class="s2">"MIFLIN0001"</span><span class="p">,</span>
   <span class="s2">"deleted"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="s2">"deleted_at"</span><span class="o">:</span> <span class="kc">null</span>
