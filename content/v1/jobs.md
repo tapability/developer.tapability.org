@@ -112,6 +112,27 @@ coordinates
 apply_url
 : _Required_ **string**
 
+full_time
+: _Optional_ **boolean**
+
+part_time
+: _Optional_ **boolean**
+
+internship
+: _Optional_ **boolean**
+
+volunteer
+: _Optional_ **boolean**
+
+contract
+: _Optional_ **boolean**
+
+temporary
+: _Optional_ **boolean**
+
+telecommute
+: _Optional_ **boolean**
+
 <%= json \
     :code          => "MIFLIN0001",
     :title         => "Assistant Regional Manager",
@@ -138,6 +159,8 @@ Update the provided job.
 
 ### Input
 
+_Note: you cannot update job category or location info when updating._
+
 title
 : _Required_ **string**
 
@@ -149,6 +172,27 @@ code
 
 apply_url
 : _Required_ **string**
+
+full_time
+: _Optional_ **boolean**
+
+part_time
+: _Optional_ **boolean**
+
+internship
+: _Optional_ **boolean**
+
+volunteer
+: _Optional_ **boolean**
+
+contract
+: _Optional_ **boolean**
+
+temporary
+: _Optional_ **boolean**
+
+telecommute
+: _Optional_ **boolean**
 
 <%= json \
     :code        => "MIFLIN0001",

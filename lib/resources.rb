@@ -167,7 +167,14 @@ module Tapability
       "zip"           => nil,
       "contact_name"  => nil,
       "contact_email" => nil,
-      "contact_phone" => nil
+      "contact_phone" => nil,
+      "full_time"     => false,
+      "part_time"     => false,
+      "internship"    => false,
+      "volunteer"     => false,
+      "contract"      => false,
+      "temporary"     => false,
+      "telecommute"   => false
     })
 
     JOB_AUTHENTICATED = JOB_FULL.merge({
